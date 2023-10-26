@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.DataAccess",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.DataAccess.Core", "Smart.Finances.DataAccess.Core\Smart.Finances.DataAccess.Core.csproj", "{D0ACD339-C8DD-41EE-A9FC-A987EC54309C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Finances.DataAccess.Event", "Smart.Finances.DataAccess.Event\Smart.Finances.DataAccess.Event.csproj", "{B2D63F7D-79E9-4121-BFC7-7C7326783217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.DataAccess.Event", "Smart.Finances.DataAccess.Event\Smart.Finances.DataAccess.Event.csproj", "{B2D63F7D-79E9-4121-BFC7-7C7326783217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Finances.DataAccess.Infra", "Smart.Finances.DataAccess.Infra\Smart.Finances.DataAccess.Infra.csproj", "{63CE75CB-1830-4634-A33B-3EE30B30EA41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.DataAccess.Infra", "Smart.Finances.DataAccess.Infra\Smart.Finances.DataAccess.Infra.csproj", "{63CE75CB-1830-4634-A33B-3EE30B30EA41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Finances.DataAccess.UnitTests", "Smart.Finances.DataAccess.UnitTests\Smart.Finances.DataAccess.UnitTests.csproj", "{A7EFE44D-01F1-4ACF-8FE2-B234897C3D19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.DataAccess.UnitTests", "Smart.Finances.DataAccess.UnitTests\Smart.Finances.DataAccess.UnitTests.csproj", "{A7EFE44D-01F1-4ACF-8FE2-B234897C3D19}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "..\docker-compose.dcproj", "{4FD102AF-3A5A-4070-AB9F-62FE9DAA0B13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A7EFE44D-01F1-4ACF-8FE2-B234897C3D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7EFE44D-01F1-4ACF-8FE2-B234897C3D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7EFE44D-01F1-4ACF-8FE2-B234897C3D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FD102AF-3A5A-4070-AB9F-62FE9DAA0B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD102AF-3A5A-4070-AB9F-62FE9DAA0B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD102AF-3A5A-4070-AB9F-62FE9DAA0B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD102AF-3A5A-4070-AB9F-62FE9DAA0B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
