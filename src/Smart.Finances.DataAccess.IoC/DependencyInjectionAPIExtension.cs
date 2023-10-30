@@ -10,6 +10,7 @@ namespace Smart.Finances.DataAccess.IoC
         public static IServiceCollection AddInfraestructureApi(this IServiceCollection services, IConfiguration configuration)
         {
             var connection = configuration.GetConnectionString("SqlServerConnection");
+
             services.AddDbContext<SqlServerDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"),
                 b => b.MigrationsAssembly(typeof(SqlServerDbContext).Assembly.FullName)));
 
