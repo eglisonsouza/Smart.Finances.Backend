@@ -1,0 +1,24 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Smart.Finances.DataAccess.Core.Entity;
+
+namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesConfiguration
+{
+    public class DespesaConfiguration: BaseConfiguration<Despesa>, IEntityTypeConfiguration<Despesa>
+    {
+
+        public new void Configure(EntityTypeBuilder<Despesa> builder)
+        {
+            base.Configure(builder);
+
+            builder
+                 .Property(p => p.Descricao);
+            builder
+                .Property(p => p.Valor)
+                .IsRequired();
+
+            builder
+                .HasOne(d => d.Categoria);
+        }
+    }
+}
