@@ -23,11 +23,7 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .IsRequired();
 
             builder
-                .HasMany(u => u.DespesasRecorrente)
-                .WithOne(d => d.Usuario)
-                .OnDelete(DeleteBehavior.Restrict);
-            builder
-                .HasMany(u => u.DespesasExtra)
+                .HasMany(u => u.Despesas)
                 .WithOne(d => d.Usuario)
                 .OnDelete(DeleteBehavior.Restrict);
         }

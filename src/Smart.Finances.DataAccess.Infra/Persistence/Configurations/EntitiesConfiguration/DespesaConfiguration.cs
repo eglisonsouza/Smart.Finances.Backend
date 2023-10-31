@@ -19,6 +19,25 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
 
             builder
                 .HasOne(d => d.Categoria);
+
+            builder
+                .Property(p => p.QuantidadeParcela)
+                .IsRequired();
+
+            builder
+                .HasOne(d => d.Usuario)
+                .WithMany(u => u.Despesas)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .Property(p => p.EhAtivo)
+                .IsRequired()
+                .HasDefaultValue(true);
+
+            builder
+               .Property(p => p.EhRecorrente)
+               .IsRequired()
+               .HasDefaultValue(true);
         }
     }
 }

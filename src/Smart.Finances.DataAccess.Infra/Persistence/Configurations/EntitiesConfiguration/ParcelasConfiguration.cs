@@ -23,7 +23,7 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .Property(p => p.PagamentoEm);
 
             builder
-                .HasOne(p => p.DespesaExtra)
+                .HasOne(p => p.Despesa)
                 .WithMany(d => d.Parcelas)
                 .OnDelete(DeleteBehavior.Restrict);
         }
