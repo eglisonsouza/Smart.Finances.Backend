@@ -4,7 +4,7 @@ using Smart.Finances.DataAccess.Core.Entity;
 
 namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesConfiguration
 {
-    public class DespesaConfiguration: BaseConfiguration<Despesa>, IEntityTypeConfiguration<Despesa>
+    public class DespesaConfiguration : BaseConfiguration<Despesa>, IEntityTypeConfiguration<Despesa>
     {
 
         public new void Configure(EntityTypeBuilder<Despesa> builder)
