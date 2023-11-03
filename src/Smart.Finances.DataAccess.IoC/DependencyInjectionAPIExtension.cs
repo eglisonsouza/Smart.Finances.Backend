@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Event.Commands;
+using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
 using Smart.Finances.DataAccess.Event.ViewModels;
 using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Consumers;
 using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Publishers;

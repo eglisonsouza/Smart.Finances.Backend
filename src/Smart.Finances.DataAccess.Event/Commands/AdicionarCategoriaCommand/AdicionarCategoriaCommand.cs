@@ -1,6 +1,6 @@
 ﻿using Smart.Finances.DataAccess.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Event.Commands
+namespace Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand
 {
     public class AdicionarCategoriaCommand
     {

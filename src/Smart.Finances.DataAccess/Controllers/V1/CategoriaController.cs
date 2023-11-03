@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Event.Commands;
+using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Controllers.V1

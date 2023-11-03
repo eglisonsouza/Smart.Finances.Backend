@@ -2,7 +2,7 @@
 using Smart.Finances.DataAccess.Event.ViewModels;
 using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
 
-namespace Smart.Finances.DataAccess.Event.Commands
+namespace Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand
 {
     public class AdicionarCategoriaHandler : IRequestHandler<AdicionarCategoriaCommand, CategoriaViewModel>
     {
