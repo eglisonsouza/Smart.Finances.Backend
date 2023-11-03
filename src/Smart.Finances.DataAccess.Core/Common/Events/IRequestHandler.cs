@@ -7,6 +7,6 @@
 
     public interface IRequestHandler<in TRequest, TResponse>
     {
-        Task<TResponse> Handle(TRequest requset);
+        Task<TResponse> Handle(TRequest request);
     }
 }

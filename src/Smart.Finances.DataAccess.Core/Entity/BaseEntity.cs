@@ -7,10 +7,23 @@
         public DateTime CriadoEm { get; private set; }
         public DateTime AtualizadoEm { get; private set; }
 
+
         protected BaseEntity()
         {
             Id = Guid.NewGuid();
             CriadoEm = DateTime.Now;
+        }
+
+        protected void Atualizar(Guid id, long sequencialId)
+        {
+            Id = id;
+            SequencialId = sequencialId;
+            AtualizadoEm = DateTime.Now;
+        }
+
+        public void Atualizar()
+        {
+            AtualizadoEm = DateTime.Now;
         }
     }
 }

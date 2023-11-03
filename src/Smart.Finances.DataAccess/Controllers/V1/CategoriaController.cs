@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
+using Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Controllers.V1
@@ -23,10 +24,13 @@ namespace Smart.Finances.DataAccess.Controllers.V1
             return Ok(handler.Handle(command));
         }
 
-        [HttpPatch]
-        public ActionResult Patch()
+        [HttpPut]
+        public ActionResult Put(
+            [FromServices] IRequestHandler<EditarCategoriaCommand, CategoriaViewModel> handler,
+            [FromBody] EditarCategoriaCommand command
+            )
         {
-            return Ok();
+            return Ok(handler.Handle(command));
         }
     }
 }
