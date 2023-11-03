@@ -16,7 +16,7 @@ namespace Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand
         public Task<CategoriaViewModel> Handle(EditarCategoriaCommand request)
         {
             var categoria = _repository
-                .ObterPorId(request.SequencialId);
+                .ObterPorId(request.Id);
 
             categoria.Atualizar(request.Descricao);
 

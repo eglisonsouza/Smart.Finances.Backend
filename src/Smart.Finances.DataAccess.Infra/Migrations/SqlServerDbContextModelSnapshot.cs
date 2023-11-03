@@ -24,11 +24,11 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
 
             modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Categoria", b =>
                 {
-                    b.Property<long>("SequencialId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("SequencialId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
@@ -44,26 +44,23 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.Property<bool>("EhAtivo")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("SequencialId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categoria");
                 });
 
             modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Despesa", b =>
                 {
-                    b.Property<long>("SequencialId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("SequencialId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("CategoriaSequencialId")
+                    b.Property<long>("CategoriaId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CriadoEm")
@@ -85,34 +82,31 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("QuantidadeParcela")
                         .HasColumnType("int");
 
-                    b.Property<long>("UsuarioSequencialId")
+                    b.Property<long>("UsuarioId")
                         .HasColumnType("bigint");
 
                     b.Property<double>("Valor")
                         .HasColumnType("float");
 
-                    b.HasKey("SequencialId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("CategoriaSequencialId");
+                    b.HasIndex("CategoriaId");
 
-                    b.HasIndex("UsuarioSequencialId");
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Despesa");
                 });
 
             modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Parcelas", b =>
                 {
-                    b.Property<long>("SequencialId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("SequencialId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
@@ -124,11 +118,8 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<long>("DespesaSequencialId")
+                    b.Property<long>("DespesaId")
                         .HasColumnType("bigint");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Numero")
                         .HasColumnType("int");
@@ -139,20 +130,20 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.Property<DateTime>("Vencimento")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("SequencialId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("DespesaSequencialId");
+                    b.HasIndex("DespesaId");
 
                     b.ToTable("Parcelas");
                 });
 
             modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Usuario", b =>
                 {
-                    b.Property<long>("SequencialId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("SequencialId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
@@ -164,9 +155,6 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -176,7 +164,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SequencialId");
+                    b.HasKey("Id");
 
                     b.ToTable("Usuario");
                 });
@@ -185,13 +173,13 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 {
                     b.HasOne("Smart.Finances.DataAccess.Core.Entity.Categoria", "Categoria")
                         .WithMany("Despesas")
-                        .HasForeignKey("CategoriaSequencialId")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Smart.Finances.DataAccess.Core.Entity.Usuario", "Usuario")
                         .WithMany("Despesas")
-                        .HasForeignKey("UsuarioSequencialId")
+                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -204,7 +192,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 {
                     b.HasOne("Smart.Finances.DataAccess.Core.Entity.Despesa", "Despesa")
                         .WithMany("Parcelas")
-                        .HasForeignKey("DespesaSequencialId")
+                        .HasForeignKey("DespesaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

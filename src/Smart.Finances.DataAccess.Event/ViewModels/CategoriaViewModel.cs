@@ -9,8 +9,7 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 {
     public class CategoriaViewModel
     {
-        public Guid Id { get; set; }
-        public long SequencialId { get; set; }
+        public long Id { get; set; }
         public string? Descricao { get; set; }
         public bool EhAtivo { get; set; }
         public DateTime CriadoEm { get; set; }
@@ -21,7 +20,6 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
             return new CategoriaViewModel
             {
                 Id = entity.Id,
-                SequencialId = entity.SequencialId,
                 Descricao = entity.Descricao,
                 EhAtivo = entity.EhAtivo,
                 CriadoEm = entity.CriadoEm,
