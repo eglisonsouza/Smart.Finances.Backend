@@ -10,16 +10,18 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
         {
             builder
                 .HasKey(p => p.Id);
+            builder
+                .HasKey(p => p.SequencialId);
 
             builder
-                .Property(p => p.Id)
+                .Property(p => p.SequencialId)
                 .ValueGeneratedOnAdd();
+
             builder
                 .Property(p => p.CriadoEm)
-                .ValueGeneratedOnAdd();
+                .IsRequired();
             builder
-                .Property(p => p.AtualizadoEm)
-                .ValueGeneratedOnUpdate();
+                .Property(p => p.AtualizadoEm);
         }
     }
 }

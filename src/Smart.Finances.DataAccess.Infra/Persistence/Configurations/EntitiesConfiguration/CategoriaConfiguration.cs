@@ -15,8 +15,7 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .IsRequired()
                 .HasMaxLength(50);
             builder
-                .Property(p => p.EhAtivo)
-                .HasDefaultValue(true);
+                .Property(p => p.EhAtivo).IsRequired();
 
             builder
                 .HasMany(c => c.Despesas)
