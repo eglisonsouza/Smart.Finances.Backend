@@ -8,7 +8,9 @@ namespace Smart.Finances.DataAccess.Infra.MessageBus.Setup
         {
             return new ConnectionFactory
             {
-                HostName = "rabbitmq"
+                HostName = "localhost",                
+                Password = "guest",
+                UserName = "guest",
             };
         }
 
