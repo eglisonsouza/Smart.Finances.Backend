@@ -1,8 +1,8 @@
 ﻿namespace Smart.Finances.DataAccess.Core.Common.Events
 {
-    public interface IRequestHandler<in TRequest>
+    public interface IRequestHandler<TResponse>
     {
-        Task Handle(TRequest request);
+        Task<TResponse> Handle();
     }
 
     public interface IRequestHandler<in TRequest, TResponse>

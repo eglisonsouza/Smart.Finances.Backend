@@ -5,6 +5,7 @@ using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Core.Repositories;
 using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
 using Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand;
+using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
 using Smart.Finances.DataAccess.Event.ViewModels;
 using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Consumers;
 using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Publishers;
@@ -25,6 +26,7 @@ namespace Smart.Finances.DataAccess.IoC
 
             services.AddScoped<IRequestHandler<AdicionarCategoriaCommand, CategoriaViewModel>, AdicionarCategoriaHandler>();
             services.AddScoped<IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>, EditarCategoriaHandler>();
+            services.AddScoped<IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>>, ObterTodasCategociaHandler>();
 
             services.AddSingleton<IDespesaQueueConsumer, DespesaQueueConsumer>();
             services.AddSingleton<IDespesaQueuePublisher, DespesaQueuePublisher>();

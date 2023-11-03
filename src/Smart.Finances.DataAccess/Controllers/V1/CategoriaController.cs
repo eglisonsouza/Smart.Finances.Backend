@@ -2,6 +2,7 @@
 using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
 using Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand;
+using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Controllers.V1
@@ -10,9 +11,11 @@ namespace Smart.Finances.DataAccess.Controllers.V1
     public class CategoriaController : ControllerBase
     {
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult Get(
+            [FromServices] IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>> handler,
+            [FromQuery] ObterTodasCategociaQuery command)
         {
-            return Ok();
+            return Ok(handler.Handle(command));
         }
 
         [HttpPost]

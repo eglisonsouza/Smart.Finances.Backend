@@ -25,5 +25,10 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
             var entity = _context.Find<Categoria>(sequencialId)!;
             return entity;
         }
+
+        public IList<Categoria> ObterTodos()
+        {
+            return _context.Categoria.ToList();
+        }
     }
 }
