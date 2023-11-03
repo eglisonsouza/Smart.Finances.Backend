@@ -8,7 +8,7 @@ namespace Smart.Finances.DataAccess.Infra.MessageBus.Setup
         {
             return new ConnectionFactory
             {
-                HostName = "localhost",                
+                HostName = "localhost",
                 Password = "guest",
                 UserName = "guest",
             };

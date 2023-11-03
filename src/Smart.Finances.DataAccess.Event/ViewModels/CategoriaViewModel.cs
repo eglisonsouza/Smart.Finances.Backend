@@ -1,9 +1,4 @@
 ﻿using Smart.Finances.DataAccess.Core.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Smart.Finances.DataAccess.Event.ViewModels
 {

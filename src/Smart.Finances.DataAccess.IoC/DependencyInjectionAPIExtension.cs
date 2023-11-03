@@ -24,7 +24,7 @@ namespace Smart.Finances.DataAccess.IoC
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
             services.AddScoped<IRequestHandler<AdicionarCategoriaCommand, CategoriaViewModel>, AdicionarCategoriaHandler>();
-            services.AddScoped<IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>, EditarCategoriaHandler>();                     
+            services.AddScoped<IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>, EditarCategoriaHandler>();
 
             services.AddSingleton<IDespesaQueueConsumer, DespesaQueueConsumer>();
             services.AddSingleton<IDespesaQueuePublisher, DespesaQueuePublisher>();

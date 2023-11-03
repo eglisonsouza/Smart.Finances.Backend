@@ -15,7 +15,7 @@
         public void Atualizar(string? descricao)
         {
             base.Atualizar();
-            Descricao = descricao!;            
+            Descricao = descricao!;
         }
     }
 }
