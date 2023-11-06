@@ -11,6 +11,8 @@ namespace Smart.Finances.DataAccess.IoC
 
             services.AddRepository();
 
+            services.AddService();
+
             services.AddRequestHandler();
 
             services.AddRabbitMq();
