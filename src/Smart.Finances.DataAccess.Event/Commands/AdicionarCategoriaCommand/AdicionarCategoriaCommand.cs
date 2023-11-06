@@ -4,11 +4,11 @@ namespace Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand
 {
     public class AdicionarCategoriaCommand
     {
-        public string Descicao { get; set; }
+        public string Descricao { get; set; }
 
         public Categoria ToEntity()
         {
-            return new Categoria(Descicao);
+            return new Categoria(Descricao);
         }
     }
 }

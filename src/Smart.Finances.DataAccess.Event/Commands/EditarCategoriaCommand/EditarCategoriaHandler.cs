@@ -1,26 +1,30 @@
 ﻿using Smart.Finances.DataAccess.Core.Common.Events;
+using Smart.Finances.DataAccess.Core.Entity;
 using Smart.Finances.DataAccess.Core.Repositories;
+using Smart.Finances.DataAccess.Core.Repositories.Base;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand
 {
     public class EditarCategoriaHandler : IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>
     {
-        private readonly ICategoriaRepository _repository;
+        private readonly IAtualizaRepository<Categoria> _repositoryUpdate;
+        private readonly IObterPorIdRepository<Categoria> _obterIdRepository;
 
-        public EditarCategoriaHandler(ICategoriaRepository repository)
+        public EditarCategoriaHandler(IAtualizaRepository<Categoria> repositoryUpdate, IObterPorIdRepository<Categoria> obterIdRepository)
         {
-            _repository = repository;
+            _repositoryUpdate = repositoryUpdate;
+            _obterIdRepository = obterIdRepository;
         }
 
         public Task<CategoriaViewModel> Handle(EditarCategoriaCommand request)
         {
-            var categoria = _repository
+            var categoria = _obterIdRepository
                 .ObterPorId(request.Id);
 
             categoria.Atualizar(request.Descricao);
 
-            var entity = _repository.Atualizar(categoria);
+            var entity = _repositoryUpdate.Atualizar(categoria);
 
             return Task.FromResult(CategoriaViewModel.FromEntity(entity));
         }

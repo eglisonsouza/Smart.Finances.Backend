@@ -1,23 +1,24 @@
 ﻿using Smart.Finances.DataAccess.Core.Common.Events;
+using Smart.Finances.DataAccess.Core.Entity;
+using Smart.Finances.DataAccess.Core.Repositories.Base;
 using Smart.Finances.DataAccess.Event.ViewModels;
-using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
 
 namespace Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand
 {
     public class AdicionarCategoriaHandler : IRequestHandler<AdicionarCategoriaCommand, CategoriaViewModel>
     {
-        private readonly SqlServerDbContext _context;
+        private readonly IAddRepository<Categoria> _repository;
 
-        public AdicionarCategoriaHandler(SqlServerDbContext context)
+        public AdicionarCategoriaHandler(IAddRepository<Categoria> repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public Task<CategoriaViewModel> Handle(AdicionarCategoriaCommand request)
         {
-            var result = _context.AddAsync(request.ToEntity());
-            _context.SaveChanges();
-            return Task.FromResult(CategoriaViewModel.FromEntity(result.Result.Entity));
+            var result = _repository.Adicionar(request.ToEntity());
+
+            return Task.FromResult(CategoriaViewModel.FromEntity(result));
         }
     }
 }

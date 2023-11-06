@@ -1,14 +1,15 @@
 ﻿using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Core.Repositories;
+using Smart.Finances.DataAccess.Core.Entity;
+using Smart.Finances.DataAccess.Core.Repositories.Base;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria
 {
     public class ObterTodasCategociaHandler : IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>>
     {
-        private readonly ICategoriaRepository _repository;
+        private readonly IObterTodosRepository<Categoria> _repository;
 
-        public ObterTodasCategociaHandler(ICategoriaRepository repository)
+        public ObterTodasCategociaHandler(IObterTodosRepository<Categoria> repository)
         {
             _repository = repository;
         }
