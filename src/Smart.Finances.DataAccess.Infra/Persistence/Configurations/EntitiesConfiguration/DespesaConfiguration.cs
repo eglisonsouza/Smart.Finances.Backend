@@ -27,17 +27,20 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
             builder
                 .HasOne(d => d.Usuario)
                 .WithMany(u => u.Despesas)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(d => d.UsuarioId);
+
+            builder
+                .HasMany(d => d.Parcelas)
+                .WithOne(p => p.Despesa)
+                .HasForeignKey(p => p.DespesaId);
 
             builder
                 .Property(p => p.EhAtivo)
-                .IsRequired()
-                .HasDefaultValue(true);
+                .IsRequired();
 
             builder
                .Property(p => p.EhRecorrente)
-               .IsRequired()
-               .HasDefaultValue(true);
+               .IsRequired();
         }
     }
 }

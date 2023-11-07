@@ -12,6 +12,7 @@ namespace Smart.Finances.DataAccess.IoC
             services.AddScoped(typeof(IAtualizaRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IObterPorIdRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IObterTodosRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IAddVariosRepository<>), typeof(GenericRepository<>));
             return services;
         }
     }

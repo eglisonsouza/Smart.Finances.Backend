@@ -16,11 +16,6 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .HasMaxLength(50);
             builder
                 .Property(p => p.EhAtivo).IsRequired();
-
-            builder
-                .HasMany(c => c.Despesas)
-                .WithOne(d => d.Categoria)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

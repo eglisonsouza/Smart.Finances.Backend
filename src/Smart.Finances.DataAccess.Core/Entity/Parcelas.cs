@@ -5,7 +5,18 @@
         public DateTime Vencimento { get; private set; }
         public int Numero { get; private set; }
         public string? Descricao { get; private set; }
-        public Despesa Despesa { get; private set; }
         public DateTime? PagamentoEm { get; private set; }
+        public double ValorParcela { get; private set; }
+        public long DespesaId { get; private set; }
+        public Despesa? Despesa { get; private set; }
+
+        public Parcelas(DateTime vencimento, int numero, string? descricao, double valorParcela, long despesaId) : base()
+        {
+            Vencimento = vencimento;
+            Numero = numero;
+            Descricao = descricao;
+            ValorParcela = valorParcela;
+            DespesaId = despesaId;
+        }
     }
 }

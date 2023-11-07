@@ -20,12 +20,11 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .Property(p => p.Descricao)
                 .HasMaxLength(50);
             builder
+                .Property(p => p.ValorParcela)
+                .IsRequired();
+            builder
                 .Property(p => p.PagamentoEm);
 
-            builder
-                .HasOne(p => p.Despesa)
-                .WithMany(d => d.Parcelas)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -5,7 +5,12 @@ using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
 
 namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
 {
-    public class GenericRepository<TEntity> : IAddRepository<TEntity>, IAtualizaRepository<TEntity>, IObterPorIdRepository<TEntity>, IObterTodosRepository<TEntity> where TEntity : BaseEntity
+    public class GenericRepository<TEntity> :
+        IAddRepository<TEntity>,
+        IAtualizaRepository<TEntity>,
+        IObterPorIdRepository<TEntity>,
+        IObterTodosRepository<TEntity>,
+        IAddVariosRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly SqlServerDbContext _context;
         private readonly DbSet<TEntity> _dbSet;
@@ -21,6 +26,12 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
             var result = _dbSet.Add(entity);
             _context.SaveChanges();
             return result.Entity;
+        }
+
+        public int AdicionarVarios(List<TEntity> entities)
+        {
+            _dbSet.AddRange(entities);
+            return _context.SaveChanges();
         }
 
         public TEntity Atualizar(TEntity categoria)

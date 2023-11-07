@@ -6,6 +6,9 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations
     public class SqlServerDbContext : DbContext
     {
         public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Parcelas> Parcelas { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Despesa> Despesa { get; set; }
 
         public SqlServerDbContext(DbContextOptions<SqlServerDbContext> options) : base(options) { }
 

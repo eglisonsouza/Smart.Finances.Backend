@@ -2,6 +2,8 @@
 using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands;
 using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers;
+using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands;
+using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlres;
 using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
 using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres;
 using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
@@ -19,6 +21,8 @@ namespace Smart.Finances.DataAccess.IoC
             services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, UsuarioViewModel>, CadastrarUsuarioHandler>();
             services.AddScoped<IRequestHandler<EditarUsuarioCommand, UsuarioViewModel>, EditarUsuarioHandler>();
             services.AddScoped<IRequestHandler<EditarUsuarioSenhaCommand, UsuarioViewModel>, EditarUsuarioSenhaHandler>();
+            services.AddScoped<IRequestHandler<CadastrarDespesaCommand, DespesaViewModel>, CadastroDespesaHandler>();
+
             return services;
         }
     }
