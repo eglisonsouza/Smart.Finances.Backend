@@ -1,9 +1,10 @@
 ﻿using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Core.Entity;
 using Smart.Finances.DataAccess.Core.Repositories.Base;
+using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Commands.EditarUsuarioCommand
+namespace Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres
 {
     public class EditarUsuarioHandler : IRequestHandler<EditarUsuarioCommand, UsuarioViewModel>
     {

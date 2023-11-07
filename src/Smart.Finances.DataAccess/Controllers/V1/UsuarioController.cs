@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Event.Commands.CadastrarUsuarioCommand;
-using Smart.Finances.DataAccess.Event.Commands.EditarUsuarioCommand;
-using Smart.Finances.DataAccess.Event.Commands.EditarUsuarioSenhaCommand;
+using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Controllers.V1

@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand
+﻿namespace Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands
 {
     public class EditarCategoriaCommand
     {

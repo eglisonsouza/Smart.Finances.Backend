@@ -1,10 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Event.Commands.AdicionarCategoriaCommand;
-using Smart.Finances.DataAccess.Event.Commands.CadastrarUsuarioCommand;
-using Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand;
-using Smart.Finances.DataAccess.Event.Commands.EditarUsuarioCommand;
-using Smart.Finances.DataAccess.Event.Commands.EditarUsuarioSenhaCommand;
+using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands;
+using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers;
+using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
+using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres;
 using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
 using Smart.Finances.DataAccess.Event.ViewModels;
 

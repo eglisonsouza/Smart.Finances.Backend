@@ -1,9 +1,10 @@
 ﻿using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Core.Entity;
 using Smart.Finances.DataAccess.Core.Repositories.Base;
+using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Commands.EditarCategoriaCommand
+namespace Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers
 {
     public class EditarCategoriaHandler : IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>
     {
