@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands;
-using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
+using Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Queries;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.Controllers.V1

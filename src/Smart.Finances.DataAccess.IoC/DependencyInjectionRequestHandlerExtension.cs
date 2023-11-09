@@ -3,10 +3,15 @@ using Smart.Finances.DataAccess.Core.Common.Events;
 using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Commands;
 using Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers;
 using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands;
-using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlres;
+using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlers;
+using Smart.Finances.DataAccess.Event.Commands.ParcelaEvent.Commands;
+using Smart.Finances.DataAccess.Event.Commands.ParcelaEvent.Handlers;
 using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
 using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres;
-using Smart.Finances.DataAccess.Event.Queries.ObterTodasCategoria;
+using Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Handlers;
+using Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Queries;
+using Smart.Finances.DataAccess.Event.Queries.DespesaEvent.Handlers;
+using Smart.Finances.DataAccess.Event.Queries.DespesaEvent.Queries;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
 namespace Smart.Finances.DataAccess.IoC
@@ -22,6 +27,10 @@ namespace Smart.Finances.DataAccess.IoC
             services.AddScoped<IRequestHandler<EditarUsuarioCommand, UsuarioViewModel>, EditarUsuarioHandler>();
             services.AddScoped<IRequestHandler<EditarUsuarioSenhaCommand, UsuarioViewModel>, EditarUsuarioSenhaHandler>();
             services.AddScoped<IRequestHandler<CadastrarDespesaCommand, DespesaViewModel>, CadastroDespesaHandler>();
+            services.AddScoped<IRequestHandler<InativarDespesaCommand, DespesaViewModel>, InativarDespesaHandler>();
+            services.AddScoped<IRequestHandler<PagarParcelaCommand, ParcelasViewModel>, PagarParcelaHandler>();
+            services.AddScoped<IRequestHandler<ObterDespesaQuery, List<DespesaViewModel>>, ObterDespesaHandler>();
+            services.AddScoped<IRequestHandler<ObterDespesaRecorrenteQuery, List<DespesaViewModel>>, ObterDespesaRecorrenteHandler>();
 
             return services;
         }

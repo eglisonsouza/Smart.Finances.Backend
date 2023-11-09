@@ -18,5 +18,14 @@
             ValorParcela = valorParcela;
             DespesaId = despesaId;
         }
+
+        public void Pagar()
+        {
+            if (PagamentoEm is not null)
+            {
+                throw new Exception($"Parcela já foi paga em {PagamentoEm}");
+            }
+            PagamentoEm = DateTime.Now;
+        }
     }
 }

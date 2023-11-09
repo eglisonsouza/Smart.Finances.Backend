@@ -12,14 +12,19 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 
         public static List<ParcelasViewModel> FromEntity(List<Parcelas> parcelas)
         {
-            return parcelas.Select(p => new ParcelasViewModel
+            return parcelas.Select(p => FromEntity(p)).ToList();
+        }
+
+        public static ParcelasViewModel FromEntity(Parcelas parcela)
+        {
+            return new ParcelasViewModel
             {
-                Id = p.Id,
-                Vencimento = p.Vencimento,
-                NumeroParcela = p.Numero,
-                Descricao = p.Descricao!,
-                PagamentoEm = p.PagamentoEm ?? DateTime.MinValue
-            }).ToList();
+                Id = parcela.Id,
+                Vencimento = parcela.Vencimento,
+                NumeroParcela = parcela.Numero,
+                Descricao = parcela.Descricao!,
+                PagamentoEm = parcela.PagamentoEm ?? DateTime.MinValue
+            };
         }
     }
 }

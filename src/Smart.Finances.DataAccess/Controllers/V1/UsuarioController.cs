@@ -9,7 +9,7 @@ namespace Smart.Finances.DataAccess.Controllers.V1
     public class UsuarioController : ControllerBase
     {
         [HttpPost]
-        [Route("/cadastrar")]
+        [Route("cadastrar")]
         public IActionResult Cadastrar(
             [FromServices] IRequestHandler<CadastrarUsuarioCommand, UsuarioViewModel> handler,
             [FromQuery] CadastrarUsuarioCommand command)
@@ -18,7 +18,7 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         }
 
         [HttpPatch]
-        [Route("/atualizar/perfil")]
+        [Route("atualizar/perfil")]
         public IActionResult AtualizarPerfil(
             [FromServices] IRequestHandler<EditarUsuarioCommand, UsuarioViewModel> handler,
             [FromQuery] EditarUsuarioCommand command)
@@ -27,7 +27,7 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         }
 
         [HttpPatch]
-        [Route("/atualizar/senha")]
+        [Route("atualizar/senha")]
         public IActionResult AtualizarSenha(
             [FromServices] IRequestHandler<EditarUsuarioSenhaCommand, UsuarioViewModel> handler,
             [FromQuery] EditarUsuarioSenhaCommand command)

@@ -19,7 +19,7 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 
         public static DespesaViewModel FromEntity(Despesa entity)
         {
-            return new DespesaViewModel
+            var despesaViewModel = new DespesaViewModel
             {
                 Id = entity.Id,
                 Descricao = entity.Descricao,
@@ -33,6 +33,16 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
                 CriadoEm = entity.CriadoEm,
                 Parcelas = ParcelasViewModel.FromEntity(entity.Parcelas)
             };
+            
+            if (entity.Categoria is not null) despesaViewModel.Categoria = CategoriaViewModel.FromEntity(entity.Categoria);
+            
+            return despesaViewModel;
         }
+
+        public static List<DespesaViewModel> FromEntity(List<Despesa> entity)
+        {
+            return entity.Select(e => FromEntity(e)).ToList();
+        }
+
     }
 }

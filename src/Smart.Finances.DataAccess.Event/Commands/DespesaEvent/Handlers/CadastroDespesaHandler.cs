@@ -4,7 +4,7 @@ using Smart.Finances.DataAccess.Core.Repositories.Base;
 using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands;
 using Smart.Finances.DataAccess.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlres
+namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlers
 {
     public class CadastroDespesaHandler : IRequestHandler<CadastrarDespesaCommand, DespesaViewModel>
     {

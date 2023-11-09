@@ -43,5 +43,10 @@
         {
             Usuario = usuario;
         }
+
+        public void Inativar()
+        {
+            EhAtivo = false;
+        }
     }
 }
