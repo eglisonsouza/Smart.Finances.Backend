@@ -15,11 +15,11 @@ namespace Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers
             _repository = repository;
         }
 
-        public Task<CategoriaViewModel> Handle(AdicionarCategoriaCommand request)
+        public async Task<CategoriaViewModel> Handle(AdicionarCategoriaCommand request)
         {
-            var result = _repository.Adicionar(request.ToEntity());
+            var result = await _repository.AdicionarAsync(request.ToEntity());
 
-            return Task.FromResult(CategoriaViewModel.FromEntity(result));
+            return CategoriaViewModel.FromEntity(result);
         }
     }
 }

@@ -17,15 +17,15 @@ namespace Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres
             _obterIdRepository = obterIdRepository;
         }
 
-        public Task<UsuarioViewModel> Handle(EditarUsuarioCommand request)
+        public async Task<UsuarioViewModel> Handle(EditarUsuarioCommand request)
         {
-            var usuario = _obterIdRepository.ObterPorId(request.Id);
+            var usuario = await _obterIdRepository.ObterPorIdAsync(request.Id);
 
             usuario.AtualizarPerfil(request.NomeCompleto, request.Email);
 
-            var entity = _repositoryUpdate.Atualizar(usuario);
+            var entity = await _repositoryUpdate.AtualizarAsync(usuario);
 
-            return Task.FromResult(UsuarioViewModel.FromEntity(entity));
+            return UsuarioViewModel.FromEntity(entity);
         }
     }
 }

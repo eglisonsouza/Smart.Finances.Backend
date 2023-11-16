@@ -21,35 +21,34 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
             _dbSet = _context.Set<TEntity>();
         }
 
-        public TEntity Adicionar(TEntity entity)
+        public async Task<TEntity> AdicionarAsync(TEntity entity)
         {
-            var result = _dbSet.Add(entity);
+            var result = await _dbSet.AddAsync(entity);
             _context.SaveChanges();
             return result.Entity;
         }
 
-        public int AdicionarVarios(List<TEntity> entities)
+        public async Task<int> AdicionarVariosAsync(List<TEntity> entities)
         {
-            _dbSet.AddRange(entities);
+            await _dbSet.AddRangeAsync(entities);
             return _context.SaveChanges();
         }
 
-        public TEntity Atualizar(TEntity categoria)
+        public async Task<TEntity> AtualizarAsync(TEntity categoria)
         {
             var entity = _dbSet.Update(categoria);
             _context.SaveChanges();
             return entity.Entity;
         }
 
-        public TEntity ObterPorId(long sequencialId)
+        public async Task<TEntity?> ObterPorIdAsync(long sequencialId)
         {
-            var entity = _dbSet.Find(sequencialId)!;
-            return entity;
+            return await _dbSet.FindAsync(sequencialId);
         }
 
-        public IList<TEntity> ObterTodos()
+        public async Task<List<TEntity>> ObterTodosAsync()
         {
-            return _dbSet.ToList();
+            return await _dbSet.ToListAsync();
         }
     }
 }

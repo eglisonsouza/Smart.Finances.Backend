@@ -18,13 +18,13 @@ namespace Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres
             _authService = authService;
         }
 
-        public Task<UsuarioViewModel> Handle(CadastrarUsuarioCommand request)
+        public async Task<UsuarioViewModel> Handle(CadastrarUsuarioCommand request)
         {
             request.SetSenhaHash(_authService.ComputarSha256Hash(request.Senha));
 
-            var entity = _repository.Adicionar(request.ToEntity());
+            var entity =await _repository.AdicionarAsync(request.ToEntity());
 
-            return Task.FromResult(UsuarioViewModel.FromEntity(entity)); ;
+            return UsuarioViewModel.FromEntity(entity);
         }
     }
 }

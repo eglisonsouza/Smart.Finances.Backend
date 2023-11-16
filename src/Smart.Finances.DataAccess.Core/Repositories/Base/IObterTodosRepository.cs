@@ -4,6 +4,6 @@ namespace Smart.Finances.DataAccess.Core.Repositories.Base
 {
     public interface IObterTodosRepository<TEntity> where TEntity : BaseEntity
     {
-        public IList<TEntity> ObterTodos();
+        Task<List<TEntity>> ObterTodosAsync();
     }
 }

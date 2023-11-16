@@ -18,15 +18,15 @@ namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlers
             _parcelaRepository = parcelaRepository;
         }
 
-        public Task<DespesaViewModel> Handle(CadastrarDespesaCommand request)
+        public async Task<DespesaViewModel> Handle(CadastrarDespesaCommand request)
         {
-            var entity = _despesaRepository.Adicionar(request.ToEntity());
+            var entity = await _despesaRepository.AdicionarAsync(request.ToEntity());
 
             entity.GerarParcelas(request.PrimeiroVencimento);
 
-            _parcelaRepository.AdicionarVarios(entity.Parcelas);
+            await _parcelaRepository.AdicionarVariosAsync(entity.Parcelas);
 
-            return Task.FromResult(DespesaViewModel.FromEntity(entity));
+            return DespesaViewModel.FromEntity(entity);
         }
     }
 }

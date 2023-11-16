@@ -4,6 +4,6 @@ namespace Smart.Finances.DataAccess.Core.Repositories.Base
 {
     public interface IObterPorIdRepository<TEntity> where TEntity : BaseEntity
     {
-        TEntity ObterPorId(long sequencialId);
+        Task<TEntity> ObterPorIdAsync(long sequencialId);
     }
 }

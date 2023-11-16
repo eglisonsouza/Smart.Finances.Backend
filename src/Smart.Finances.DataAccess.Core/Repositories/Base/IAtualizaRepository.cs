@@ -4,6 +4,6 @@ namespace Smart.Finances.DataAccess.Core.Repositories.Base
 {
     public interface IAtualizaRepository<TEntity> where TEntity : BaseEntity
     {
-        TEntity Atualizar(TEntity categoria);
+        Task<TEntity> AtualizarAsync(TEntity categoria);
     }
 }

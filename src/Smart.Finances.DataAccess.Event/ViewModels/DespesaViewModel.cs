@@ -39,7 +39,7 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
             return despesaViewModel;
         }
 
-        public static List<DespesaViewModel> FromEntity(List<Despesa> entity)
+        public static List<DespesaViewModel> FromEntity(IEnumerable<Despesa> entity)
         {
             return entity.Select(e => FromEntity(e)).ToList();
         }

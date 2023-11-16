@@ -17,16 +17,16 @@ namespace Smart.Finances.DataAccess.Event.Commands.CategoriaEvent.Handlers
             _obterIdRepository = obterIdRepository;
         }
 
-        public Task<CategoriaViewModel> Handle(EditarCategoriaCommand request)
+        public async Task<CategoriaViewModel> Handle(EditarCategoriaCommand request)
         {
-            var categoria = _obterIdRepository
-                .ObterPorId(request.Id);
+            var categoria = await _obterIdRepository
+                .ObterPorIdAsync(request.Id);
 
             categoria.Atualizar(request.Descricao);
 
-            var entity = _repositoryUpdate.Atualizar(categoria);
+            var entity = await _repositoryUpdate.AtualizarAsync(categoria);
 
-            return Task.FromResult(CategoriaViewModel.FromEntity(entity));
+            return CategoriaViewModel.FromEntity(entity);
         }
     }
 }

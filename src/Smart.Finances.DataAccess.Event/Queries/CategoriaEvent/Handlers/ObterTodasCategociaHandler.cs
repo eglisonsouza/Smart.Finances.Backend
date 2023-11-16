@@ -15,11 +15,10 @@ namespace Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Handlers
             _repository = repository;
         }
 
-        public Task<List<CategoriaViewModel>> Handle(ObterTodasCategociaQuery request)
+        public async Task<List<CategoriaViewModel>> Handle(ObterTodasCategociaQuery request)
         {
-            var categorias = _repository.ObterTodos()
-                                .Select(c => CategoriaViewModel.FromEntity(c)).ToList();
-            return Task.FromResult(categorias);
+            var categorias = await _repository.ObterTodosAsync();
+            return categorias.Select(c => CategoriaViewModel.FromEntity(c)).ToList();
         }
     }
 }

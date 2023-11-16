@@ -4,6 +4,6 @@ namespace Smart.Finances.DataAccess.Core.Repositories.Base
 {
     public interface IAddVariosRepository<TEntity> where TEntity : BaseEntity
     {
-        public int AdicionarVarios(List<TEntity> entities);
+        Task<int> AdicionarVariosAsync(List<TEntity> entities);
     }
 }

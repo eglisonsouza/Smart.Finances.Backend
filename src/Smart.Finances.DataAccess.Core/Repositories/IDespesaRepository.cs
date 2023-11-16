@@ -4,8 +4,8 @@ namespace Smart.Finances.DataAccess.Core.Repositories
 {
     public interface IDespesaRepository
     {
-        List<Despesa> ObterDespesaPorMes(int mes, long usuarioId);
+        Task<IList<Despesa>> ObterDespesaPorMesAsync(int mes, long usuarioId);
 
-        List<Despesa> ObterDespesaRecorrente(long usuarioId);
+        Task<IList<Despesa>> ObterDespesaRecorrenteAsync(long usuarioId);
     }
 }

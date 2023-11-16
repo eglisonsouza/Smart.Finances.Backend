@@ -25,17 +25,17 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         }
 
         [HttpGet]
-        public IActionResult Get([FromServices] IRequestHandler<ObterDespesaQuery, List<DespesaViewModel>> handler,
+        public async Task<IActionResult> Get([FromServices] IRequestHandler<ObterDespesaQuery, List<DespesaViewModel>> handler,
             [FromQuery] ObterDespesaQuery query)
         {
-            return Ok(handler.Handle(query));
+            return Ok(await handler.Handle(query));
         }
 
         [HttpGet("recorrente")]
-        public IActionResult Get([FromServices] IRequestHandler<ObterDespesaRecorrenteQuery, List<DespesaViewModel>> handler,
+        public async Task<IActionResult> Get([FromServices] IRequestHandler<ObterDespesaRecorrenteQuery, List<DespesaViewModel>> handler,
             [FromQuery] ObterDespesaRecorrenteQuery query)
         {
-            return Ok(handler.Handle(query));
+            return Ok(await handler.Handle(query));
         }
     }
 }

@@ -17,12 +17,12 @@ namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlers
             _repositoryUpdate = repositoryUpdate;
         }
 
-        public Task<DespesaViewModel> Handle(InativarDespesaCommand request)
+        public async Task<DespesaViewModel> Handle(InativarDespesaCommand request)
         {
-            var entity = _obterIdRepository.ObterPorId(request.DespesaId);
+            var entity = await _obterIdRepository.ObterPorIdAsync(request.DespesaId);
             entity.Inativar();
-            var result = _repositoryUpdate.Atualizar(entity);
-            return Task.FromResult(DespesaViewModel.FromEntity(result));
+            var result = await _repositoryUpdate.AtualizarAsync(entity);
+            return DespesaViewModel.FromEntity(result);
         }
     }
 }

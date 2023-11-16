@@ -10,11 +10,11 @@ namespace Smart.Finances.DataAccess.Controllers.V1
     public class CategoriaController : ControllerBase
     {
         [HttpGet]
-        public ActionResult Get(
+        public async Task<ActionResult> Get(
             [FromServices] IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>> handler,
             [FromQuery] ObterTodasCategociaQuery command)
         {
-            return Ok(handler.Handle(command));
+            return Ok(await handler.Handle(command));
         }
 
         [HttpPost]

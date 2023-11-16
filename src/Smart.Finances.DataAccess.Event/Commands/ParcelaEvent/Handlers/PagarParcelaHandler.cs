@@ -17,15 +17,15 @@ namespace Smart.Finances.DataAccess.Event.Commands.ParcelaEvent.Handlers
             _repositoryUpdate = repositoryUpdate;
         }
 
-        public Task<ParcelasViewModel> Handle(PagarParcelaCommand request)
+        public async Task<ParcelasViewModel> Handle(PagarParcelaCommand request)
         {
-            var entity = _obterIdRepository.ObterPorId(request.IdParcela);
+            var entity = await _obterIdRepository.ObterPorIdAsync(request.IdParcela);
 
             entity.Pagar();
 
-            var result = _repositoryUpdate.Atualizar(entity);
+            var result = await _repositoryUpdate.AtualizarAsync(entity);
 
-            return Task.FromResult(ParcelasViewModel.FromEntity(result));
+            return ParcelasViewModel.FromEntity(result);
         }
     }
 }

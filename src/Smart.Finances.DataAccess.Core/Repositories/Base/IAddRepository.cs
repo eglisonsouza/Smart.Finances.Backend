@@ -4,6 +4,6 @@ namespace Smart.Finances.DataAccess.Core.Repositories.Base
 {
     public interface IAddRepository<TEntity> where TEntity : BaseEntity
     {
-        public TEntity Adicionar(TEntity entity);
+        Task<TEntity> AdicionarAsync(TEntity entity);
     }
 }

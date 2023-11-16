@@ -14,11 +14,11 @@ namespace Smart.Finances.DataAccess.Event.Queries.DespesaEvent.Handlers
             _repository = repository;
         }
 
-        public Task<List<DespesaViewModel>> Handle(ObterDespesaQuery request)
+        public async Task<List<DespesaViewModel>> Handle(ObterDespesaQuery request)
         {
-            var despesas = _repository.ObterDespesaPorMes(request.MesReferencia, request.UsuarioId);
+            var despesas = await _repository.ObterDespesaPorMesAsync(request.MesReferencia, request.UsuarioId);
 
-            return Task.FromResult(DespesaViewModel.FromEntity(despesas));
+            return DespesaViewModel.FromEntity(despesas);
         }
     }
 }
