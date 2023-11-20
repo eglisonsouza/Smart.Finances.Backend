@@ -14,7 +14,7 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<IList<Despesa>> ObterDespesaPorMesAsync(int mes, long usuarioId)
+        public async Task<IList<Despesa>> ObterDespesaPorMesAsync(int mes, Guid usuarioId)
         {
             return await _context.Despesa
                 .Include(d => d.Categoria)
@@ -22,7 +22,7 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
                 .Where(d => d.UsuarioId.Equals(usuarioId) && d.EhRecorrente.Equals(false)).ToListAsync();
         }
 
-        public async Task<IList<Despesa>> ObterDespesaRecorrenteAsync(long usuarioId)
+        public async Task<IList<Despesa>> ObterDespesaRecorrenteAsync(Guid usuarioId)
         {
             return await _context.Despesa
                 .Include(d => d.Categoria)

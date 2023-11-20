@@ -10,10 +10,10 @@ namespace Smart.Finances.DataAccess.Controllers.V1
     {
         [HttpPatch]
         [Route("pagar")]
-        public IActionResult Pagar([FromServices] IRequestHandler<PagarParcelaCommand, ParcelasViewModel> handler,
+        public async Task<IActionResult> Pagar([FromServices] IRequestHandler<PagarParcelaCommand, ParcelasViewModel> handler,
             [FromQuery] PagarParcelaCommand command)
         {
-            return Ok(handler.Handle(command));
+            return Ok(await handler.Handle(command));
         }
     }
 }

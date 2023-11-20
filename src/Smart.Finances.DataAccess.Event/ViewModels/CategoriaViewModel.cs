@@ -4,7 +4,7 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 {
     public class CategoriaViewModel
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public string? Descricao { get; set; }
         public bool EhAtivo { get; set; }
         public DateTime CriadoEm { get; set; }

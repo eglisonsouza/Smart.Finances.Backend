@@ -41,9 +41,9 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
             return entity.Entity;
         }
 
-        public async Task<TEntity?> ObterPorIdAsync(long sequencialId)
+        public async Task<TEntity?> ObterPorIdAsync(Guid id)
         {
-            return await _dbSet.FindAsync(sequencialId);
+            return await _dbSet.FindAsync(id);
         }
 
         public async Task<List<TEntity>> ObterTodosAsync()

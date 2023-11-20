@@ -4,12 +4,12 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 {
     public class DespesaViewModel
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public string Descricao { get; set; }
         public double Valor { get; set; }
         public CategoriaViewModel Categoria { get; set; }
-        public long CategoriaId { get; set; }
-        public long UsuarioId { get; set; }
+        public Guid CategoriaId { get; set; }
+        public Guid UsuarioId { get; set; }
         public int QuantidadeParcela { get; set; }
         public bool EhRecorrente { get; set; }
         public bool EhAtivo { get; set; }

@@ -12,9 +12,6 @@ namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesCon
                 .HasKey(p => p.Id);
 
             builder
-                .Property(p => p.Id)
-                .ValueGeneratedOnAdd();
-            builder
                 .Property(p => p.CriadoEm)
                 .IsRequired();
             builder

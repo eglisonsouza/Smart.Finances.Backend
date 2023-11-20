@@ -3,6 +3,6 @@
     public class ObterDespesaQuery
     {
         public int MesReferencia { get; set; }
-        public long UsuarioId { get; set; }
+        public Guid UsuarioId { get; set; }
     }
 }

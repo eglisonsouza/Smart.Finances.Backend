@@ -7,15 +7,12 @@ namespace Smart.Finances.DataAccess.IoC
     {
         public static IServiceCollection AddInfraestructureApi(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddContextSqlServer(configuration);
-
-            services.AddRepository();
-
-            services.AddService();
-
-            services.AddRequestHandler();
-
-            services.AddRabbitMq();
+            services
+                .AddContextSqlServer(configuration)
+                .AddRepository()
+                .AddService()
+                .AddRequestHandler()
+                .AddRabbitMq();
 
             return services;
         }

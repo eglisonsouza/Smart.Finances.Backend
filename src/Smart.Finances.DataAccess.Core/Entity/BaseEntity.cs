@@ -2,21 +2,16 @@
 {
     public abstract class BaseEntity
     {
-        public long Id { get; private set; }
+        public Guid Id { get; private set; }
         public DateTime CriadoEm { get; private set; }
         public DateTime AtualizadoEm { get; private set; }
 
 
         protected BaseEntity()
         {
+            Id = Guid.NewGuid();
             CriadoEm = DateTime.Now;
-        }
-
-        protected void Atualizar(long id)
-        {
-            Id = id;
-            AtualizadoEm = DateTime.Now;
-        }
+        } 
 
         public void Atualizar()
         {

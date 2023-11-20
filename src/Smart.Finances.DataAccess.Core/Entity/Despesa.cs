@@ -5,15 +5,15 @@
         public string Descricao { get; private set; }
         public double Valor { get; private set; }
         public Categoria Categoria { get; private set; }
-        public long CategoriaId { get; private set; }
+        public Guid CategoriaId { get; private set; }
         public Usuario Usuario { get; private set; }
-        public long UsuarioId { get; private set; }
+        public Guid UsuarioId { get; private set; }
         public bool EhAtivo { get; private set; }
         public int QuantidadeParcela { get; private set; }
         public List<Parcelas> Parcelas { get; private set; }
         public bool EhRecorrente { get; private set; }
 
-        public Despesa(string descricao, double valor, int quantidadeParcela, bool ehRecorrente, long categoriaId, long usuarioId) : base()
+        public Despesa(string descricao, double valor, int quantidadeParcela, bool ehRecorrente, Guid categoriaId, Guid usuarioId) : base()
         {
             Descricao = descricao;
             Valor = valor;

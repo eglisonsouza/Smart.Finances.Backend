@@ -4,7 +4,7 @@ namespace Smart.Finances.DataAccess.Event.ViewModels
 {
     public class ParcelasViewModel
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime Vencimento { get; set; }
         public int NumeroParcela { get; set; }
         public string Descricao { get; set; }

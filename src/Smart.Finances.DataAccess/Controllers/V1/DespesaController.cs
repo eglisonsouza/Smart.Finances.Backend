@@ -18,10 +18,10 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         }
 
         [HttpPatch("inativar")]
-        public IActionResult Pagar([FromServices] IRequestHandler<InativarDespesaCommand, DespesaViewModel> handler,
+        public async Task<IActionResult> Pagar([FromServices] IRequestHandler<InativarDespesaCommand, DespesaViewModel> handler,
             [FromQuery] InativarDespesaCommand command)
         {
-            return Ok(handler.Handle(command));
+            return Ok(await handler.Handle(command));
         }
 
         [HttpGet]

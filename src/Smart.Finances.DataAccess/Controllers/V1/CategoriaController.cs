@@ -12,9 +12,9 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         [HttpGet]
         public async Task<ActionResult> Get(
             [FromServices] IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>> handler,
-            [FromQuery] ObterTodasCategociaQuery command)
+            [FromQuery] ObterTodasCategociaQuery query)
         {
-            return Ok(await handler.Handle(command));
+            return Ok(await handler.Handle(query));
         }
 
         [HttpPost]
@@ -27,12 +27,12 @@ namespace Smart.Finances.DataAccess.Controllers.V1
         }
 
         [HttpPut]
-        public ActionResult Put(
+        public async Task<ActionResult> Put(
             [FromServices] IRequestHandler<EditarCategoriaCommand, CategoriaViewModel> handler,
             [FromBody] EditarCategoriaCommand command
             )
         {
-            return Ok(handler.Handle(command));
+            return Ok(await handler.Handle(command));
         }
     }
 }

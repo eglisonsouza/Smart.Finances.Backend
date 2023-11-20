@@ -2,6 +2,6 @@
 {
     public class InativarDespesaCommand
     {
-        public long DespesaId { get; set; }
+        public Guid DespesaId { get; set; }
     }
 }

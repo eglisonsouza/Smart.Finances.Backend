@@ -2,6 +2,6 @@
 {
     public class PagarParcelaCommand
     {
-        public long IdParcela { get; set; }
+        public Guid IdParcela { get; set; }
     }
 }

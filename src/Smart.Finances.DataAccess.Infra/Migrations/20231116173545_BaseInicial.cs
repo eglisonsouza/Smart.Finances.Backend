@@ -5,7 +5,7 @@
 namespace Smart.Finances.DataAccess.Infra.Migrations
 {
     /// <inheritdoc />
-    public partial class AddBaseInicial : Migration
+    public partial class BaseInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,8 +14,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 name: "Categoria",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EhAtivo = table.Column<bool>(type: "bit", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -30,8 +29,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 name: "Usuario",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -47,15 +45,14 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 name: "Despesa",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Valor = table.Column<double>(type: "float", nullable: false),
-                    CategoriaId = table.Column<long>(type: "bigint", nullable: false),
-                    UsuarioId = table.Column<long>(type: "bigint", nullable: false),
-                    EhAtivo = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    CategoriaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EhAtivo = table.Column<bool>(type: "bit", nullable: false),
                     QuantidadeParcela = table.Column<int>(type: "int", nullable: false),
-                    EhRecorrente = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    EhRecorrente = table.Column<bool>(type: "bit", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AtualizadoEm = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -67,7 +64,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         column: x => x.CategoriaId,
                         principalTable: "Categoria",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Despesa_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
@@ -80,13 +77,13 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                 name: "Parcelas",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Vencimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Numero = table.Column<int>(type: "int", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    DespesaId = table.Column<long>(type: "bigint", nullable: false),
                     PagamentoEm = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ValorParcela = table.Column<double>(type: "float", nullable: false),
+                    DespesaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AtualizadoEm = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -98,7 +95,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                         column: x => x.DespesaId,
                         principalTable: "Despesa",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
