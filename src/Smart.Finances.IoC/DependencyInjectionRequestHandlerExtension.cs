@@ -1,18 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Event.Commands.CategoriaEvent.Commands;
-using Smart.Finances.Event.Commands.CategoriaEvent.Handlers;
-using Smart.Finances.Event.Commands.DespesaEvent.Commands;
-using Smart.Finances.Event.Commands.DespesaEvent.Handlers;
-using Smart.Finances.Event.Commands.ParcelaEvent.Commands;
-using Smart.Finances.Event.Commands.ParcelaEvent.Handlers;
-using Smart.Finances.Event.Commands.UsuarioEvent.Commands;
-using Smart.Finances.Event.Commands.UsuarioEvent.Handlres;
-using Smart.Finances.Event.Queries.CategoriaEvent.Handlers;
-using Smart.Finances.Event.Queries.CategoriaEvent.Queries;
-using Smart.Finances.Event.Queries.DespesaEvent.Handlers;
-using Smart.Finances.Event.Queries.DespesaEvent.Queries;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Commands.CategoriaEvent.Commands;
+using Smart.Finances.Application.Commands.CategoriaEvent.Handlers;
+using Smart.Finances.Application.Commands.DespesaEvent.Commands;
+using Smart.Finances.Application.Commands.DespesaEvent.Handlers;
+using Smart.Finances.Application.Commands.ParcelaEvent.Commands;
+using Smart.Finances.Application.Commands.ParcelaEvent.Handlers;
+using Smart.Finances.Application.Commands.UsuarioEvent.Commands;
+using Smart.Finances.Application.Commands.UsuarioEvent.Handlres;
+using Smart.Finances.Application.Queries.CategoriaEvent.Handlers;
+using Smart.Finances.Application.Queries.CategoriaEvent.Queries;
+using Smart.Finances.Application.Queries.DespesaEvent.Handlers;
+using Smart.Finances.Application.Queries.DespesaEvent.Queries;
+using Smart.Finances.Application.ViewModels;
 
 namespace Smart.Finances.IoC
 {

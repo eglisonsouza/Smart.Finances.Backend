@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.Event.Queries.DespesaEvent.Queries
+﻿namespace Smart.Finances.Application.Queries.DespesaEvent.Queries
 {
     public class ObterDespesaRecorrenteQuery
     {

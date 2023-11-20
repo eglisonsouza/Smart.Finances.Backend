@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.Event.Commands.CategoriaEvent.Commands
+﻿namespace Smart.Finances.Application.Commands.CategoriaEvent.Commands
 {
     public class EditarCategoriaCommand
     {

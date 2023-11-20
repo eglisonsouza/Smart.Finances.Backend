@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Event.Commands.ParcelaEvent.Commands;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Commands.ParcelaEvent.Commands;
+using Smart.Finances.Application.ViewModels;
 
 namespace Smart.Finances.Controllers.V1
 {

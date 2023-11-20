@@ -1,9 +1,9 @@
 ﻿using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Core.Repositories;
-using Smart.Finances.Event.Queries.DespesaEvent.Queries;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Queries.DespesaEvent.Queries;
+using Smart.Finances.Application.ViewModels;
 
-namespace Smart.Finances.Event.Queries.DespesaEvent.Handlers
+namespace Smart.Finances.Application.Queries.DespesaEvent.Handlers
 {
     public class ObterDespesaHandler : IRequestHandler<ObterDespesaQuery, List<DespesaViewModel>>
     {

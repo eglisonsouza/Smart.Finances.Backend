@@ -1,6 +1,6 @@
 ﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.Event.ViewModels
+namespace Smart.Finances.Application.ViewModels
 {
     public class UsuarioViewModel
     {

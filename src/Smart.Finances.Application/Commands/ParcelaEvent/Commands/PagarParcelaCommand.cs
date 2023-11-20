@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.Event.Commands.ParcelaEvent.Commands
+﻿namespace Smart.Finances.Application.Commands.ParcelaEvent.Commands
 {
     public class PagarParcelaCommand
     {

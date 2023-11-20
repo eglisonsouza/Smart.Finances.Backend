@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.Event.Commands.DespesaEvent.Commands
+﻿namespace Smart.Finances.Application.Commands.DespesaEvent.Commands
 {
     public class InativarDespesaCommand
     {

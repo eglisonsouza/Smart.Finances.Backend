@@ -1,9 +1,9 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Event.Commands.DespesaEvent.Commands;
-using Smart.Finances.Event.Queries.DespesaEvent.Queries;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Commands.DespesaEvent.Commands;
+using Smart.Finances.Application.Queries.DespesaEvent.Queries;
+using Smart.Finances.Application.ViewModels;
 
 namespace Smart.Finances.Controllers.V1
 {

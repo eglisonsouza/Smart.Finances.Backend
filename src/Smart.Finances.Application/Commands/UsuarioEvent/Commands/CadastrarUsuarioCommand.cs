@@ -1,6 +1,6 @@
 ﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.Event.Commands.UsuarioEvent.Commands
+namespace Smart.Finances.Application.Commands.UsuarioEvent.Commands
 {
     public class CadastrarUsuarioCommand
     {

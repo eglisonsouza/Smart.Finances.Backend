@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Event.Commands.UsuarioEvent.Commands;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Commands.UsuarioEvent.Commands;
+using Smart.Finances.Application.ViewModels;
 
 namespace Smart.Finances.Controllers.V1
 {

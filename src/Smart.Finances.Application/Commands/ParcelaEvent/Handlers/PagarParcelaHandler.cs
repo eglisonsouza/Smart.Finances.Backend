@@ -1,10 +1,10 @@
 ﻿using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Core.Entity;
 using Smart.Finances.Core.Repositories.Base;
-using Smart.Finances.Event.Commands.ParcelaEvent.Commands;
-using Smart.Finances.Event.ViewModels;
+using Smart.Finances.Application.Commands.ParcelaEvent.Commands;
+using Smart.Finances.Application.ViewModels;
 
-namespace Smart.Finances.Event.Commands.ParcelaEvent.Handlers
+namespace Smart.Finances.Application.Commands.ParcelaEvent.Handlers
 {
     public class PagarParcelaHandler : IRequestHandler<PagarParcelaCommand, ParcelasViewModel>
     {

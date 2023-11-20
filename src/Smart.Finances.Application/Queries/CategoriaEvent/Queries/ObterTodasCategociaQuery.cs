@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.Event.Queries.CategoriaEvent.Queries
+﻿namespace Smart.Finances.Application.Queries.CategoriaEvent.Queries
 {
     public class ObterTodasCategociaQuery
     {
