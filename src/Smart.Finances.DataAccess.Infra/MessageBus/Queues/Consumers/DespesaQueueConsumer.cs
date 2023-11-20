@@ -1,6 +1,6 @@
-﻿using Smart.Finances.DataAccess.Core.Common.Consumers;
+﻿using Smart.Finances.Core.Common.Consumers;
 
-namespace Smart.Finances.DataAccess.Infra.MessageBus.Queues.Consumers
+namespace Smart.Finances.Infra.MessageBus.Queues.Consumers
 {
     public interface IDespesaQueueConsumer : IQueue { }
 

@@ -1,4 +1,4 @@
-namespace Smart.Finances.DataAccess.UnitTest
+namespace Smart.Finances.UnitTest
 {
     public class UnitTest1
     {

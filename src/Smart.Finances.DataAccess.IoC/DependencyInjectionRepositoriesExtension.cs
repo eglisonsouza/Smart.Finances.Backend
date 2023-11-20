@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.DataAccess.Core.Repositories;
-using Smart.Finances.DataAccess.Core.Repositories.Base;
-using Smart.Finances.DataAccess.Infra.Persistence.Repositories;
+using Smart.Finances.Core.Repositories;
+using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Infra.Persistence.Repositories;
 
-namespace Smart.Finances.DataAccess.IoC
+namespace Smart.Finances.IoC
 {
     public static class DependencyInjectionRepositoriesExtension
     {

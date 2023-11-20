@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Smart.Finances.DataAccess.IoC\Smart.Finances.DataAccess.IoC.csproj" />
+    <ProjectReference Include="..\Smart.Finances.DataAccess.IoC\Smart.Finances.IoC.csproj" />
   </ItemGroup>
 
 </Project>

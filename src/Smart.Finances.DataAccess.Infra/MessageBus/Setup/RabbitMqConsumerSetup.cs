@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using Smart.Finances.DataAccess.Core.Common.Consumers;
+using Smart.Finances.Core.Common.Consumers;
 
-namespace Smart.Finances.DataAccess.Infra.MessageBus.Setup
+namespace Smart.Finances.Infra.MessageBus.Setup
 {
     public class RabbitMqConsumerSetup<TQueue> : BackgroundService where TQueue : IQueue
     {

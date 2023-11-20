@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Event.Queries.DespesaEvent.Queries
+﻿namespace Smart.Finances.Event.Queries.DespesaEvent.Queries
 {
     public class ObterDespesaQuery
     {

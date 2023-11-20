@@ -1,6 +1,6 @@
-﻿using Smart.Finances.DataAccess.Core.Entity;
+﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands
+namespace Smart.Finances.Event.Commands.DespesaEvent.Commands
 {
     public class CadastrarDespesaCommand
     {

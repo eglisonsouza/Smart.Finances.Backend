@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Core.Common.Events
+﻿namespace Smart.Finances.Core.Common.Events
 {
     public interface IRequestHandler<TResponse>
     {

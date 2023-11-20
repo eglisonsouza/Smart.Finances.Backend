@@ -1,11 +1,11 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands;
-using Smart.Finances.DataAccess.Event.Queries.DespesaEvent.Queries;
-using Smart.Finances.DataAccess.Event.ViewModels;
+using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Event.Commands.DespesaEvent.Commands;
+using Smart.Finances.Event.Queries.DespesaEvent.Queries;
+using Smart.Finances.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Controllers.V1
+namespace Smart.Finances.Controllers.V1
 {
     [Route("api/v1/despesa")]
     public class DespesaController : ControllerBase

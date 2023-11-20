@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Core.Common.Consumers
+﻿namespace Smart.Finances.Core.Common.Consumers
 {
     public interface IQueue
     {

@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Core.Services
+﻿namespace Smart.Finances.Core.Services
 {
     public interface IAuthService
     {

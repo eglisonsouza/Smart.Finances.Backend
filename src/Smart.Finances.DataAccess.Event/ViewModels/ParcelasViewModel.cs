@@ -1,6 +1,6 @@
-﻿using Smart.Finances.DataAccess.Core.Entity;
+﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Event.ViewModels
+namespace Smart.Finances.Event.ViewModels
 {
     public class ParcelasViewModel
     {

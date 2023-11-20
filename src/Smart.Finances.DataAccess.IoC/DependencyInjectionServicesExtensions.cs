@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.DataAccess.Core.Services;
-using Smart.Finances.DataAccess.Infra.Services;
+using Smart.Finances.Core.Services;
+using Smart.Finances.Infra.Services;
 
-namespace Smart.Finances.DataAccess.IoC
+namespace Smart.Finances.IoC
 {
     public static class DependencyInjectionServicesExtensions
     {

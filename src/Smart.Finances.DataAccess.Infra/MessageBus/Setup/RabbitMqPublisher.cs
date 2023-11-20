@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Client;
 
-namespace Smart.Finances.DataAccess.Infra.MessageBus.Setup
+namespace Smart.Finances.Infra.MessageBus.Setup
 {
     public class RabbitMqPublisher
     {

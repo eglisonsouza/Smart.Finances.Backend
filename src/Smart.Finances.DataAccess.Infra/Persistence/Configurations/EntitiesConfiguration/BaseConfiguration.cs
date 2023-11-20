@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Smart.Finances.DataAccess.Core.Entity;
+using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations.EntitiesConfiguration
+namespace Smart.Finances.Infra.Persistence.Configurations.EntitiesConfiguration
 {
     public class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
     {

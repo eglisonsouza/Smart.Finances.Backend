@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Smart.Finances.DataAccess.IoC
+namespace Smart.Finances.IoC
 {
     public static class DependencyInjectionAPIExtension
     {

@@ -1,8 +1,8 @@
-﻿using Smart.Finances.DataAccess.Core.Services;
+﻿using Smart.Finances.Core.Services;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Smart.Finances.DataAccess.Infra.Services
+namespace Smart.Finances.Infra.Services
 {
     public class AuthService : IAuthService
     {

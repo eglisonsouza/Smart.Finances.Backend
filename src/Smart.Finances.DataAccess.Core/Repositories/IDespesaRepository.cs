@@ -1,6 +1,6 @@
-﻿using Smart.Finances.DataAccess.Core.Entity;
+﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Core.Repositories
+namespace Smart.Finances.Core.Repositories
 {
     public interface IDespesaRepository
     {

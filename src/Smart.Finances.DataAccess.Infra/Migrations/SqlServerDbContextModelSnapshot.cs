@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
+using Smart.Finances.Infra.Persistence.Configurations;
 
 #nullable disable
 
-namespace Smart.Finances.DataAccess.Infra.Migrations
+namespace Smart.Finances.Infra.Migrations
 {
     [DbContext(typeof(SqlServerDbContext))]
     partial class SqlServerDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Categoria", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Categoria", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.ToTable("Categoria");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Despesa", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Despesa", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.ToTable("Despesa");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Parcelas", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Parcelas", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,7 +128,7 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.ToTable("Parcelas");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Usuario", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Usuario", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,15 +158,15 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.ToTable("Usuario");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Despesa", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Despesa", b =>
                 {
-                    b.HasOne("Smart.Finances.DataAccess.Core.Entity.Categoria", "Categoria")
+                    b.HasOne("Smart.Finances.Core.Entity.Categoria", "Categoria")
                         .WithMany()
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Smart.Finances.DataAccess.Core.Entity.Usuario", "Usuario")
+                    b.HasOne("Smart.Finances.Core.Entity.Usuario", "Usuario")
                         .WithMany("Despesas")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -177,9 +177,9 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Parcelas", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Parcelas", b =>
                 {
-                    b.HasOne("Smart.Finances.DataAccess.Core.Entity.Despesa", "Despesa")
+                    b.HasOne("Smart.Finances.Core.Entity.Despesa", "Despesa")
                         .WithMany("Parcelas")
                         .HasForeignKey("DespesaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -188,12 +188,12 @@ namespace Smart.Finances.DataAccess.Infra.Migrations
                     b.Navigation("Despesa");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Despesa", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Despesa", b =>
                 {
                     b.Navigation("Parcelas");
                 });
 
-            modelBuilder.Entity("Smart.Finances.DataAccess.Core.Entity.Usuario", b =>
+            modelBuilder.Entity("Smart.Finances.Core.Entity.Usuario", b =>
                 {
                     b.Navigation("Despesas");
                 });

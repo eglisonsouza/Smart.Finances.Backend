@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Smart.Finances.DataAccess.Core.Entity;
+using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Infra.Persistence.Configurations
+namespace Smart.Finances.Infra.Persistence.Configurations
 {
     public class SqlServerDbContext : DbContext
     {

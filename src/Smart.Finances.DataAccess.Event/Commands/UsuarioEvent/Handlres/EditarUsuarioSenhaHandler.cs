@@ -1,11 +1,11 @@
-﻿using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Core.Entity;
-using Smart.Finances.DataAccess.Core.Repositories.Base;
-using Smart.Finances.DataAccess.Core.Services;
-using Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Commands;
-using Smart.Finances.DataAccess.Event.ViewModels;
+﻿using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Entity;
+using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Core.Services;
+using Smart.Finances.Event.Commands.UsuarioEvent.Commands;
+using Smart.Finances.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Commands.UsuarioEvent.Handlres
+namespace Smart.Finances.Event.Commands.UsuarioEvent.Handlres
 {
     public class EditarUsuarioSenhaHandler : IRequestHandler<EditarUsuarioSenhaCommand, UsuarioViewModel>
     {

@@ -1,10 +1,10 @@
-﻿using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Core.Entity;
-using Smart.Finances.DataAccess.Core.Repositories.Base;
-using Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Queries;
-using Smart.Finances.DataAccess.Event.ViewModels;
+﻿using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Entity;
+using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Event.Queries.CategoriaEvent.Queries;
+using Smart.Finances.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Queries.CategoriaEvent.Handlers
+namespace Smart.Finances.Event.Queries.CategoriaEvent.Handlers
 {
     public class ObterTodasCategociaHandler : IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>>
     {

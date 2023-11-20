@@ -1,10 +1,10 @@
-﻿using Smart.Finances.DataAccess.Core.Common.Events;
-using Smart.Finances.DataAccess.Core.Entity;
-using Smart.Finances.DataAccess.Core.Repositories.Base;
-using Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Commands;
-using Smart.Finances.DataAccess.Event.ViewModels;
+﻿using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Entity;
+using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Event.Commands.DespesaEvent.Commands;
+using Smart.Finances.Event.ViewModels;
 
-namespace Smart.Finances.DataAccess.Event.Commands.DespesaEvent.Handlers
+namespace Smart.Finances.Event.Commands.DespesaEvent.Handlers
 {
     public class InativarDespesaHandler : IRequestHandler<InativarDespesaCommand, DespesaViewModel>
     {

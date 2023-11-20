@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Smart.Finances.DataAccess.Infra.Migrations
+namespace Smart.Finances.Infra.Migrations
 {
     /// <inheritdoc />
     public partial class BaseInicial : Migration

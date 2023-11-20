@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
+using Smart.Finances.Infra.Persistence.Configurations;
 
-namespace Smart.Finances.DataAccess.IoC
+namespace Smart.Finances.IoC
 {
     public static class DependencyInjectionDabataseExtension
     {

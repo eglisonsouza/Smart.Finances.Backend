@@ -1,7 +1,7 @@
-﻿using Smart.Finances.DataAccess.Infra.MessageBus.Setup;
+﻿using Smart.Finances.Infra.MessageBus.Setup;
 using System.Text;
 
-namespace Smart.Finances.DataAccess.Infra.MessageBus.Queues.Publishers
+namespace Smart.Finances.Infra.MessageBus.Queues.Publishers
 {
     public interface IDespesaQueuePublisher
     {

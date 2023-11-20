@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Smart.Finances.DataAccess.Core.Entity;
-using Smart.Finances.DataAccess.Core.Repositories;
-using Smart.Finances.DataAccess.Infra.Persistence.Configurations;
+using Smart.Finances.Core.Entity;
+using Smart.Finances.Core.Repositories;
+using Smart.Finances.Infra.Persistence.Configurations;
 
-namespace Smart.Finances.DataAccess.Infra.Persistence.Repositories
+namespace Smart.Finances.Infra.Persistence.Repositories
 {
     public class DespesaRepository : IDespesaRepository
     {

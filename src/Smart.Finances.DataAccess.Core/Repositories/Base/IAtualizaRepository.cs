@@ -1,6 +1,6 @@
-﻿using Smart.Finances.DataAccess.Core.Entity;
+﻿using Smart.Finances.Core.Entity;
 
-namespace Smart.Finances.DataAccess.Core.Repositories.Base
+namespace Smart.Finances.Core.Repositories.Base
 {
     public interface IAtualizaRepository<TEntity> where TEntity : BaseEntity
     {

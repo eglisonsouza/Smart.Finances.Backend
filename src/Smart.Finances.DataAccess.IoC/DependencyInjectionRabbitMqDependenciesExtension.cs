@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Consumers;
-using Smart.Finances.DataAccess.Infra.MessageBus.Queues.Publishers;
-using Smart.Finances.DataAccess.Infra.MessageBus.Setup;
+using Smart.Finances.Infra.MessageBus.Queues.Consumers;
+using Smart.Finances.Infra.MessageBus.Queues.Publishers;
+using Smart.Finances.Infra.MessageBus.Setup;
 
-namespace Smart.Finances.DataAccess.IoC
+namespace Smart.Finances.IoC
 {
     public static class DependencyInjectionRabbitMqDependenciesExtension
     {

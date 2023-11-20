@@ -1,4 +1,4 @@
-﻿namespace Smart.Finances.DataAccess.Core.Entity
+﻿namespace Smart.Finances.Core.Entity
 {
     public class Usuario : BaseEntity
     {

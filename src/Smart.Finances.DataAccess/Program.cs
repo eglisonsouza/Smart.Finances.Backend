@@ -1,4 +1,4 @@
-using Smart.Finances.DataAccess.IoC;
+using Smart.Finances.IoC;
 
 
 var builder = WebApplication.CreateBuilder(args);
