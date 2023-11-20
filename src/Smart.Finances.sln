@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Api", "Smart.Finances.DataAccess\Smart.Finances.Api.csproj", "{4A762C6B-24A0-4E5B-AC93-93BF5E0F2A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Api", "Smart.Finances.Api\Smart.Finances.Api.csproj", "{4A762C6B-24A0-4E5B-AC93-93BF5E0F2A94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Core", "Smart.Finances.DataAccess.Core\Smart.Finances.Core.csproj", "{D0ACD339-C8DD-41EE-A9FC-A987EC54309C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Core", "Smart.Finances.Core\Smart.Finances.Core.csproj", "{D0ACD339-C8DD-41EE-A9FC-A987EC54309C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Application", "Smart.Finances.DataAccess.Event\Smart.Finances.Application.csproj", "{B2D63F7D-79E9-4121-BFC7-7C7326783217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Application", "Smart.Finances.Application\Smart.Finances.Application.csproj", "{B2D63F7D-79E9-4121-BFC7-7C7326783217}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Infra", "Smart.Finances.DataAccess.Infra\Smart.Finances.Infra.csproj", "{63CE75CB-1830-4634-A33B-3EE30B30EA41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.Infra", "Smart.Finances.Infra\Smart.Finances.Infra.csproj", "{63CE75CB-1830-4634-A33B-3EE30B30EA41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.IoC", "Smart.Finances.DataAccess.IoC\Smart.Finances.IoC.csproj", "{924BF06F-A5E4-4A54-92CB-CBD3971DE6D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.IoC", "Smart.Finances.IoC\Smart.Finances.IoC.csproj", "{924BF06F-A5E4-4A54-92CB-CBD3971DE6D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.UnitTest", "Smart.Finances.DataAccess.UnitTest\Smart.Finances.UnitTest.csproj", "{E0D336F2-395C-47EE-B02D-96E45B3D6771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Finances.UnitTest", "Smart.Finances.UnitTest\Smart.Finances.UnitTest.csproj", "{E0D336F2-395C-47EE-B02D-96E45B3D6771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

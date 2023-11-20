@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Smart.Finances.DataAccess.Core\Smart.Finances.Core.csproj" />
-    <ProjectReference Include="..\Smart.Finances.DataAccess.Infra\Smart.Finances.Infra.csproj" />
+    <ProjectReference Include="..\Smart.Finances.Core\Smart.Finances.Core.csproj" />
+    <ProjectReference Include="..\Smart.Finances.Infra\Smart.Finances.Infra.csproj" />
   </ItemGroup>
 
 </Project>

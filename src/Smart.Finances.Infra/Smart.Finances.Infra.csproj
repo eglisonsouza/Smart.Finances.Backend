@@ -14,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Smart.Finances.DataAccess.Core\Smart.Finances.Core.csproj" />
+	  <ProjectReference Include="..\Smart.Finances.Core\Smart.Finances.Core.csproj" />
 	</ItemGroup>
 
 </Project>
