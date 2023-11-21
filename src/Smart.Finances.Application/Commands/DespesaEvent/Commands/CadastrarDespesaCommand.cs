@@ -8,6 +8,7 @@ namespace Smart.Finances.Application.Commands.DespesaEvent.Commands
         public double Valor { get; set; }
         public Guid CategoriaId { get; set; }
         public Guid UsuarioId { get; set; }
+        public string EmailUsuario { get; set; }
         public int QuantidadeParcela { get; set; }
         public bool EhRecorrente { get; set; }
         public DateTime PrimeiroVencimento { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Smart.Finances.Core.Entity
+﻿using System.Globalization;
+
+namespace Smart.Finances.Core.Entity
 {
     public class Despesa : BaseEntity
     {
@@ -47,6 +49,18 @@
         public void Inativar()
         {
             EhAtivo = false;
+        }
+
+        public string GerarMensagem()
+        {
+            return @$"Olá!
+
+Você cadastrou uma nova despesa no valor de {Valor.ToString("C2", CultureInfo.CurrentCulture)} com a descrição {Descricao}.
+A primeira parcela vence em {Parcelas[0].Vencimento.ToShortDateString()}.
+A última parcela vence em {Parcelas[QuantidadeParcela - 1].Vencimento.ToShortDateString()}.
+O valor de cada parcela é de R${Parcelas[0].ValorParcela}.
+
+Obrigado por utilizar o Smart Finances!";
         }
     }
 }

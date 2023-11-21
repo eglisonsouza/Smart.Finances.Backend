@@ -1,4 +1,6 @@
-﻿namespace Smart.Finances.Core.Entity
+﻿using System.Globalization;
+
+namespace Smart.Finances.Core.Entity
 {
     public class Parcelas : BaseEntity
     {
@@ -26,6 +28,12 @@
                 throw new Exception($"Parcela já foi paga em {PagamentoEm}");
             }
             PagamentoEm = DateTime.Now;
+        }
+
+        public string GerarMensagem()
+        {
+            return @$"Olá! 
+Você pagou a parcela {Numero} da despesa {Despesa?.Descricao} no valor de {ValorParcela.ToString("C2", CultureInfo.CurrentCulture)}.";
         }
     }
 }

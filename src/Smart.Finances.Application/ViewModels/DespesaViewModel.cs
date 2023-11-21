@@ -44,5 +44,9 @@ namespace Smart.Finances.Application.ViewModels
             return entity.Select(e => FromEntity(e)).ToList();
         }
 
+        public string GerarMensagem()
+        {
+            return $@"Olá, você acabou de cadastrar uma nova despesa no valor de {Valor} com a descrição {Descricao} e com {QuantidadeParcela} parcelas";
+        }
     }
 }

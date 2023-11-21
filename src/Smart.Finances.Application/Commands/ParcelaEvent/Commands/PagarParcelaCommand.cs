@@ -3,5 +3,6 @@
     public class PagarParcelaCommand
     {
         public Guid IdParcela { get; set; }
+        public string EmailUsuario{ get; set; }
     }
 }
