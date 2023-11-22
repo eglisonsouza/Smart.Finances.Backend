@@ -3,19 +3,19 @@
     public abstract class BaseEntity
     {
         public Guid Id { get; private set; }
-        public DateTime CriadoEm { get; private set; }
-        public DateTime AtualizadoEm { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
 
 
         protected BaseEntity()
         {
             Id = Guid.NewGuid();
-            CriadoEm = DateTime.Now;
+            CreatedAt = DateTime.Now;
         } 
 
-        public void Atualizar()
+        public void Update()
         {
-            AtualizadoEm = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
     }
 }

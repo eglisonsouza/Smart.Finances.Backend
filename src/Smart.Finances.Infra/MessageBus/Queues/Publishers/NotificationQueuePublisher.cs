@@ -9,11 +9,11 @@ namespace Smart.Finances.Infra.MessageBus.Queues.Publishers
     }
     public class NotificationQueuePublisher : RabbitMqPublisher, INotificationQueuePublisher
     {
-        private const string DESPESA_QUEUE = "notification";
+        private const string NotificationQueue = "notification";
 
         public void Publish(EmailArgs email)
         {
-            base.Publish(DESPESA_QUEUE, email.ToBytes());
+            base.Publish(NotificationQueue, email.ToBytes());
         }
     }    
 }

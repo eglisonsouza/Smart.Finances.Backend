@@ -9,10 +9,10 @@ namespace Smart.Finances.IoC
     {
         public static IServiceCollection AddRabbitMq(this IServiceCollection services)
         {
-            services.AddSingleton<IDespesaQueueConsumer, DespesaQueueConsumer>();
+            services.AddSingleton<IExpenseQueueConsumer, ExpenseQueueConsumer>();
             services.AddSingleton<INotificationQueuePublisher, NotificationQueuePublisher>();
 
-            services.AddHostedService<RabbitMqConsumerSetup<IDespesaQueueConsumer>>();
+            services.AddHostedService<RabbitMqConsumerSetup<IExpenseQueueConsumer>>();
 
             return services;
         }

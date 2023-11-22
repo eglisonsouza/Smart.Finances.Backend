@@ -5,10 +5,10 @@ namespace Smart.Finances.Infra.Persistence.Configurations
 {
     public class SqlServerDbContext : DbContext
     {
-        public DbSet<Categoria> Categoria { get; set; }
-        public DbSet<Parcelas> Parcelas { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Despesa> Despesa { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Installment> Installment { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Expense> Expense { get; set; }
 
         public SqlServerDbContext(DbContextOptions<SqlServerDbContext> options) : base(options) { }
 

@@ -10,11 +10,11 @@ namespace Smart.Finances.IoC
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
             services.AddScoped(typeof(IAddRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IAtualizaRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IObterPorIdRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IObterTodosRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IAddVariosRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IDespesaRepository, DespesaRepository>();
+            services.AddScoped(typeof(IUpdateRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGetByIdRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGetAllRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IAddAllRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IExpenseRepository, ExpenseRepository>();
 
             return services;
         }

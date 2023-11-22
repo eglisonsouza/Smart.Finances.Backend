@@ -12,10 +12,10 @@ namespace Smart.Finances.Infra.Persistence.Configurations.EntitiesConfiguration
                 .HasKey(p => p.Id);
 
             builder
-                .Property(p => p.CriadoEm)
+                .Property(p => p.CreatedAt)
                 .IsRequired();
             builder
-                .Property(p => p.AtualizadoEm);
+                .Property(p => p.UpdatedAt);
         }
     }
 }

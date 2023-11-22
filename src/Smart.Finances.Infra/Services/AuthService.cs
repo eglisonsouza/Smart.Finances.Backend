@@ -6,7 +6,7 @@ namespace Smart.Finances.Infra.Services
 {
     public class AuthService : IAuthService
     {
-        public string ComputarSha256Hash(string password)
+        public string ComputeSha256Hash(string password)
         {
             return string.Join(string.Empty, CreateHash(password).Select(h => h.ToString("x2")));
         }

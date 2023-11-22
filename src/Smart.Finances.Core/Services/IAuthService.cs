@@ -2,6 +2,6 @@
 {
     public interface IAuthService
     {
-        public string ComputarSha256Hash(string password);
+        public string ComputeSha256Hash(string password);
     }
 }

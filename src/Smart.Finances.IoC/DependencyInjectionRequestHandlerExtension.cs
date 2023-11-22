@@ -1,17 +1,17 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Application.Commands.CategoriaEvent.Commands;
-using Smart.Finances.Application.Commands.CategoriaEvent.Handlers;
-using Smart.Finances.Application.Commands.DespesaEvent.Commands;
-using Smart.Finances.Application.Commands.DespesaEvent.Handlers;
-using Smart.Finances.Application.Commands.ParcelaEvent.Commands;
-using Smart.Finances.Application.Commands.ParcelaEvent.Handlers;
-using Smart.Finances.Application.Commands.UsuarioEvent.Commands;
-using Smart.Finances.Application.Commands.UsuarioEvent.Handlres;
-using Smart.Finances.Application.Queries.CategoriaEvent.Handlers;
-using Smart.Finances.Application.Queries.CategoriaEvent.Queries;
-using Smart.Finances.Application.Queries.DespesaEvent.Handlers;
-using Smart.Finances.Application.Queries.DespesaEvent.Queries;
+using Smart.Finances.Application.Commands.CategoryEvent.Commands;
+using Smart.Finances.Application.Commands.CategoryEvent.Handlers;
+using Smart.Finances.Application.Commands.ExpenseEvent.Commands;
+using Smart.Finances.Application.Commands.ExpenseEvent.Handlers;
+using Smart.Finances.Application.Commands.InstallmentEvent.Commands;
+using Smart.Finances.Application.Commands.InstallmentEvent.Handlers;
+using Smart.Finances.Application.Commands.UserEvent.Commands;
+using Smart.Finances.Application.Commands.UserEvent.Handlres;
+using Smart.Finances.Application.Queries.CategoryEvent.Handlers;
+using Smart.Finances.Application.Queries.CategoryEvent.Queries;
+using Smart.Finances.Application.Queries.ExpenseEvent.Handlers;
+using Smart.Finances.Application.Queries.ExpenseEvent.Queries;
 using Smart.Finances.Application.ViewModels;
 
 namespace Smart.Finances.IoC
@@ -20,17 +20,17 @@ namespace Smart.Finances.IoC
     {
         public static IServiceCollection AddRequestHandler(this IServiceCollection services)
         {
-            services.AddScoped<IRequestHandler<AdicionarCategoriaCommand, CategoriaViewModel>, AdicionarCategoriaHandler>();
-            services.AddScoped<IRequestHandler<EditarCategoriaCommand, CategoriaViewModel>, EditarCategoriaHandler>();
-            services.AddScoped<IRequestHandler<ObterTodasCategociaQuery, List<CategoriaViewModel>>, ObterTodasCategociaHandler>();
-            services.AddScoped<IRequestHandler<CadastrarUsuarioCommand, UsuarioViewModel>, CadastrarUsuarioHandler>();
-            services.AddScoped<IRequestHandler<EditarUsuarioCommand, UsuarioViewModel>, EditarUsuarioHandler>();
-            services.AddScoped<IRequestHandler<EditarUsuarioSenhaCommand, UsuarioViewModel>, EditarUsuarioSenhaHandler>();
-            services.AddScoped<IRequestHandler<CadastrarDespesaCommand, DespesaViewModel>, CadastroDespesaHandler>();
-            services.AddScoped<IRequestHandler<InativarDespesaCommand, DespesaViewModel>, InativarDespesaHandler>();
-            services.AddScoped<IRequestHandler<PagarParcelaCommand, ParcelasViewModel>, PagarParcelaHandler>();
-            services.AddScoped<IRequestHandler<ObterDespesaQuery, List<DespesaViewModel>>, ObterDespesaHandler>();
-            services.AddScoped<IRequestHandler<ObterDespesaRecorrenteQuery, List<DespesaViewModel>>, ObterDespesaRecorrenteHandler>();
+            services.AddScoped<IRequestHandler<AddCategoryCommand, CategoryViewModel>, AddCategoryHandler>();
+            services.AddScoped<IRequestHandler<EditCategoryCommand, CategoryViewModel>, UpdateCategoryHandler>();
+            services.AddScoped<IRequestHandler<GetAllCategoryQuery, List<CategoryViewModel>>, GetAllCategoryHandler>();
+            services.AddScoped<IRequestHandler<AddUserCommand, UserViewModel>, AddUserHandler>();
+            services.AddScoped<IRequestHandler<UpdateUserCommand, UserViewModel>, UpdateUserHandler>();
+            services.AddScoped<IRequestHandler<UpdatePasswordCommand, UserViewModel>, EditarUsuarioSenhaHandler>();
+            services.AddScoped<IRequestHandler<AddExpenseCommand, ExpenseViewModel>, AddExpenseHandler>();
+            services.AddScoped<IRequestHandler<InactivateExpenseCommand, ExpenseViewModel>, InativateExpenseHandler>();
+            services.AddScoped<IRequestHandler<PayInstallmentCommand, InstallmentViewModel>, PayInstallmentHandler>();
+            services.AddScoped<IRequestHandler<GetExpenseQuery, List<ExpenseViewModel>>, GetExpenseHandler>();
+            services.AddScoped<IRequestHandler<GetExpenseMontheyQuery, List<ExpenseViewModel>>, GetExpenseMontheyHandler>();
 
             return services;
         }

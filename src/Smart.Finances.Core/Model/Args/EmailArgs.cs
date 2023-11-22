@@ -9,11 +9,11 @@ namespace Smart.Finances.Core.Model.Args
         public string Subject { get; set; }
         public string Body { get; set; }
 
-        public EmailArgs(string to, string mensagem, string assunto)
+        public EmailArgs(string to, string message, string subject)
         {
             To = to;
-            Subject = assunto;
-            Body = mensagem;
+            Subject = subject;
+            Body = message;
         }
 
         public string ToJson()
