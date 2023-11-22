@@ -15,5 +15,5 @@ namespace Smart.Finances.Infra.MessageBus.Queues.Publishers
         {
             base.Publish(NotificationQueue, email.ToBytes());
         }
-    }    
+    }
 }

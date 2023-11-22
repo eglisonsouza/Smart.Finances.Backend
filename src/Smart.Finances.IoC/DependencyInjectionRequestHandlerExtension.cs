@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Application.Commands.CategoryEvent.Commands;
 using Smart.Finances.Application.Commands.CategoryEvent.Handlers;
 using Smart.Finances.Application.Commands.ExpenseEvent.Commands;
@@ -13,6 +12,7 @@ using Smart.Finances.Application.Queries.CategoryEvent.Queries;
 using Smart.Finances.Application.Queries.ExpenseEvent.Handlers;
 using Smart.Finances.Application.Queries.ExpenseEvent.Queries;
 using Smart.Finances.Application.ViewModels;
+using Smart.Finances.Core.Common.Events;
 
 namespace Smart.Finances.IoC
 {

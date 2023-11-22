@@ -1,7 +1,7 @@
-﻿using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Core.Repositories;
-using Smart.Finances.Application.Queries.ExpenseEvent.Queries;
+﻿using Smart.Finances.Application.Queries.ExpenseEvent.Queries;
 using Smart.Finances.Application.ViewModels;
+using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Repositories;
 
 namespace Smart.Finances.Application.Queries.ExpenseEvent.Handlers
 {

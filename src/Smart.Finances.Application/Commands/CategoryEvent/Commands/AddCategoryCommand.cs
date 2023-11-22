@@ -1,6 +1,6 @@
 ﻿using Smart.Finances.Core.Entity;
-using System.ComponentModel.DataAnnotations;
 using Smart.Finances.Core.Utils.MessageError;
+using System.ComponentModel.DataAnnotations;
 
 namespace Smart.Finances.Application.Commands.CategoryEvent.Commands
 {

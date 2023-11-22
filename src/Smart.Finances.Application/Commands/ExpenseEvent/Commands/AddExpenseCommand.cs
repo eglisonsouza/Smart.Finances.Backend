@@ -30,7 +30,7 @@ namespace Smart.Finances.Application.Commands.ExpenseEvent.Commands
         public bool IsMonthly { get; set; }
 
         [Required(ErrorMessage = MessageError.FirstDueIsRequired)]
-        public DateTime FirstDue { get; set; }     
+        public DateTime FirstDue { get; set; }
 
         public Expense ToEntity()
         {

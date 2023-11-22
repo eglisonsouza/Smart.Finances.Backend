@@ -15,14 +15,14 @@ namespace Smart.Finances.Core.Entity
         public List<Installment>? Installments { get; private set; }
         public bool IsMonthly { get; private set; }
 
-        public Expense(string description, double value, int quantityInstallment, bool isMonthly, Guid categoryUd, Guid userId) : base()
+        public Expense(string description, double value, int quantityInstallment, bool isMonthly, Guid categoryId, Guid userId) : base()
         {
             Description = description;
             Value = value;
             IsActive = true;
             QuantityInstallment = quantityInstallment;
             IsMonthly = isMonthly;
-            CategoryId = categoryUd;
+            CategoryId = categoryId;
             UserId = userId;
         }
 

@@ -33,11 +33,11 @@ namespace Smart.Finances.Application.ViewModels
                 CreatedAt = entity.CreatedAt,
                 Installments = InstallmentViewModel.FromEntity(entity.Installments),
                 Category = BuildCategoy(entity.Category)
-            }; 
+            };
         }
 
         private static CategoryViewModel? BuildCategoy(Category entity)
-        {  
+        {
             if (entity is null)
                 return null;
             return CategoryViewModel.FromEntity(entity);

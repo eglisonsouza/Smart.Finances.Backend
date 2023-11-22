@@ -11,7 +11,7 @@
         {
             Id = Guid.NewGuid();
             CreatedAt = DateTime.Now;
-        } 
+        }
 
         public void Update()
         {

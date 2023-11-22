@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Application.Commands.CategoryEvent.Commands;
 using Smart.Finances.Application.Queries.CategoryEvent.Queries;
 using Smart.Finances.Application.ViewModels;
+using Smart.Finances.Core.Common.Events;
 
 namespace Smart.Finances.Controllers.V1
 {

@@ -1,10 +1,10 @@
-﻿using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Core.Entity;
-using Smart.Finances.Core.Repositories.Base;
-using Smart.Finances.Application.Commands.InstallmentEvent.Commands;
+﻿using Smart.Finances.Application.Commands.InstallmentEvent.Commands;
 using Smart.Finances.Application.ViewModels;
-using Smart.Finances.Infra.MessageBus.Queues.Publishers;
+using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Entity;
 using Smart.Finances.Core.Model.Args;
+using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Infra.MessageBus.Queues.Publishers;
 
 namespace Smart.Finances.Application.Commands.InstallmentEvent.Handlers
 {
