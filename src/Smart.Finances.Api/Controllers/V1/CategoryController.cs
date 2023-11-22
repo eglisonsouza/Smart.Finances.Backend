@@ -6,7 +6,7 @@ using Smart.Finances.Core.Common.Events;
 
 namespace Smart.Finances.Controllers.V1
 {
-    [Route("api/v1/categories")]
+    [Route("api/v1/category")]
     public class CategoryController : ControllerBase
     {
         [HttpGet]
