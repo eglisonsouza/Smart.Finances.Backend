@@ -27,7 +27,7 @@ namespace Smart.Finances.Application.Commands.ExpenseEvent.Handlers
 
             entity.GenerateInstallment(request.FirstDue);
 
-            await _installmentRepository.AddAllAsync(entity.Installments);
+            await _installmentRepository.AddAllAsync(entity.Installments!);
 
             SendEmail(request.EmailUser!, entity.GenerateMessage());
 

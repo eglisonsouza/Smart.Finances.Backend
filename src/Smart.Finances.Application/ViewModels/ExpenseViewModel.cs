@@ -31,8 +31,8 @@ namespace Smart.Finances.Application.ViewModels
                 IsActive = entity.IsActive,
                 UpdatedAt = entity.UpdatedAt,
                 CreatedAt = entity.CreatedAt,
-                Installments = InstallmentViewModel.FromEntity(entity.Installments),
-                Category = BuildCategoy(entity.Category)
+                Installments = InstallmentViewModel.FromEntity(entity.Installments!),
+                Category = BuildCategoy(entity.Category!)
             };
         }
 

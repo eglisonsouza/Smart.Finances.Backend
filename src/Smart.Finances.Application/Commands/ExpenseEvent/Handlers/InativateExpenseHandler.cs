@@ -3,6 +3,7 @@ using Smart.Finances.Application.ViewModels;
 using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Core.Entity;
 using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Core.Utils.MessageError;
 
 namespace Smart.Finances.Application.Commands.ExpenseEvent.Handlers
 {
@@ -20,6 +21,10 @@ namespace Smart.Finances.Application.Commands.ExpenseEvent.Handlers
         public async Task<ExpenseViewModel> Handle(InactivateExpenseCommand request)
         {
             var entity = await _getByIdRepository.GetByIdAsync(request.ExpenseId);
+
+            if (entity is null)
+                throw new Exception(MessageError.ExpenseNotFound);
+
             entity.Inativate();
             var result = _updateRepository.Update(entity);
             return ExpenseViewModel.FromEntity(result);

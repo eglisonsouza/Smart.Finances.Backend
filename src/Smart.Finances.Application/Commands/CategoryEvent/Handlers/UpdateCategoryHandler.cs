@@ -3,6 +3,7 @@ using Smart.Finances.Application.ViewModels;
 using Smart.Finances.Core.Common.Events;
 using Smart.Finances.Core.Entity;
 using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Core.Utils.MessageError;
 
 namespace Smart.Finances.Application.Commands.CategoryEvent.Handlers
 {
@@ -21,6 +22,9 @@ namespace Smart.Finances.Application.Commands.CategoryEvent.Handlers
         {
             var category = await _getByIdRepository
                 .GetByIdAsync(request.Id);
+
+            if (category is null)
+                throw new Exception(MessageError.CategoryNotFound);
 
             category.Update(request.Description);
 
