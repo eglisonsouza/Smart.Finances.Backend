@@ -1,13 +1,17 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.Application.Commands.ExpenseEvent.Commands;
 using Smart.Finances.Application.Queries.ExpenseEvent.Queries;
 using Smart.Finances.Application.ViewModels;
 using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Constraints;
 
 namespace Smart.Finances.Controllers.V1
 {
+    [Authorize(Roles = RolesUser.UserApp)]
     [Route("api/v1/expense")]
+    [ApiController]
     public class ExpenseController : ControllerBase
     {
         [HttpPost]

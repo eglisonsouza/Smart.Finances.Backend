@@ -43,7 +43,7 @@ namespace Smart.Finances.Infra.Services
                     SecurityAlgorithms.HmacSha256Signature);
         }
 
-        private IEnumerable<Claim> GetClaims(string email, string role)
+        private static IEnumerable<Claim> GetClaims(string email, string role)
         {
             return new List<Claim>
             {

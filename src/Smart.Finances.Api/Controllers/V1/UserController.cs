@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Smart.Finances.Application.Commands.UserEvent.Commands;
 using Smart.Finances.Application.ViewModels;
 using Smart.Finances.Core.Common.Events;
+using Smart.Finances.Core.Constraints;
 
 namespace Smart.Finances.Controllers.V1
 {
+    [Authorize(Roles = RolesUser.UserApp)]
     [Route("api/v1/user")]
     [ApiController]
     public class UserController : ControllerBase
@@ -36,6 +39,7 @@ namespace Smart.Finances.Controllers.V1
             return Ok(await handler.Handle(command));
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> LoginAsync(

@@ -1,7 +1,7 @@
 ﻿using Smart.Finances.Application.Commands.UserEvent.Commands;
 using Smart.Finances.Application.ViewModels;
 using Smart.Finances.Core.Common.Events;
-using Smart.Finances.Core.Enums;
+using Smart.Finances.Core.Constraints;
 using Smart.Finances.Core.Repositories;
 using Smart.Finances.Core.Services;
 using Smart.Finances.Core.Utils.MessageError;
@@ -27,7 +27,7 @@ namespace Smart.Finances.Application.Commands.UserEvent.Handlers
 
             return user is null
                 ? throw new Exception(MessageError.LoginInvalid)
-                : new LoginViewModel(user.Name, user.Email, _tokenService.GenerateToken(user.Email, RoleUserEnums.UserApp.ToString()));
+                : new LoginViewModel(user.Name, user.Email, _tokenService.GenerateToken(user.Email, RolesUser.UserApp));
         }
     }
 }
