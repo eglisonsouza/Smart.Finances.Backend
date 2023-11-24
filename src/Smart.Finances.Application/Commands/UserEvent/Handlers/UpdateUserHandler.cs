@@ -31,7 +31,7 @@ namespace Smart.Finances.Application.Commands.UserEvent.Handlers
         {
             var user = await _getByIdRepository.GetByIdAsync(request.Id);
 
-            if(user is null)
+            if (user is null)
                 throw new Exception(MessageError.UserNotFound);
 
             user.UpdateProfile(request.Name!, request.Email!);
