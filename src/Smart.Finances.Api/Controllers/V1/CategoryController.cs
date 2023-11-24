@@ -20,7 +20,7 @@ namespace Smart.Finances.Controllers.V1
         [HttpPost]
         public async Task<ActionResult> PostAsync(
             [FromServices] IRequestHandler<AddCategoryCommand, CategoryViewModel> handler,
-            [FromBody] AddCategoryCommand command
+            AddCategoryCommand command
             )
         {
             return Ok(await handler.Handle(command));
@@ -29,7 +29,7 @@ namespace Smart.Finances.Controllers.V1
         [HttpPut]
         public async Task<ActionResult> PutAsync(
             [FromServices] IRequestHandler<EditCategoryCommand, CategoryViewModel> handler,
-            [FromBody] EditCategoryCommand command
+            EditCategoryCommand command
             )
         {
             return Ok(await handler.Handle(command));

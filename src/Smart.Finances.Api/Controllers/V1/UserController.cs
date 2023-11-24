@@ -22,7 +22,7 @@ namespace Smart.Finances.Controllers.V1
         [Route("update/profile")]
         public async Task<IActionResult> UpdateProfile(
             [FromServices] IRequestHandler<UpdateUserCommand, UserViewModel> handler,
-            [FromQuery] UpdateUserCommand command)
+            UpdateUserCommand command)
         {
             return Ok(await handler.Handle(command));
         }
@@ -31,7 +31,7 @@ namespace Smart.Finances.Controllers.V1
         [Route("update/password")]
         public async Task<IActionResult> UpdatePassword(
             [FromServices] IRequestHandler<UpdatePasswordCommand, UserViewModel> handler,
-            [FromQuery] UpdatePasswordCommand command)
+            UpdatePasswordCommand command)
         {
             return Ok(await handler.Handle(command));
         }

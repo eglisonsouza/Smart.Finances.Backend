@@ -11,7 +11,7 @@ namespace Smart.Finances.Controllers.V1
         [HttpPatch]
         [Route("pay")]
         public async Task<IActionResult> PayAsync([FromServices] IRequestHandler<PayInstallmentCommand, InstallmentViewModel> handler,
-            [FromQuery] PayInstallmentCommand command)
+            PayInstallmentCommand command)
         {
             return Ok(await handler.Handle(command));
         }

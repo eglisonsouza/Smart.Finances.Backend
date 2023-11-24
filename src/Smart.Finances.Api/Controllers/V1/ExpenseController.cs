@@ -12,14 +12,14 @@ namespace Smart.Finances.Controllers.V1
     {
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromServices] IRequestHandler<AddExpenseCommand, ExpenseViewModel> handler,
-            [FromQuery] AddExpenseCommand command)
+            AddExpenseCommand command)
         {
             return Ok(await handler.Handle(command));
         }
 
         [HttpPatch("inactivate")]
         public async Task<IActionResult> Inactivate([FromServices] IRequestHandler<InactivateExpenseCommand, ExpenseViewModel> handler,
-            [FromQuery] InactivateExpenseCommand command)
+            InactivateExpenseCommand command)
         {
             return Ok(await handler.Handle(command));
         }
@@ -33,7 +33,7 @@ namespace Smart.Finances.Controllers.V1
 
         [HttpGet("monthey")]
         public async Task<IActionResult> Get([FromServices] IRequestHandler<GetExpenseMontheyQuery, List<ExpenseViewModel>> handler,
-            [FromQuery] GetExpenseMontheyQuery query)
+            GetExpenseMontheyQuery query)
         {
             return Ok(await handler.Handle(query));
         }
