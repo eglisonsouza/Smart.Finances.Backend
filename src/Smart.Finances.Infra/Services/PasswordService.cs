@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Smart.Finances.Infra.Services
 {
-    public class AuthService : IAuthService
+    public class PasswordService : IPasswordService
     {
         public string ComputeSha256Hash(string password)
         {

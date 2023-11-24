@@ -16,5 +16,10 @@
         public const string ReferenceMonthIsRequired = "O mês de referência é obrigatório.";
         public const string NameIsRequired = "O nome é obrigatório.";
         public const string PasswordIsRequired = "A senha é obrigatória.";
+        public const string LoginInvalid = "Usuário ou senha inválidos";
+        public const string CategoryNotFound = "Categoria não encontrada.";
+        public const string ExpenseNotFound = "Despesa não encontrada.";
+        public const string InstallmentNotFound = "Parcela não encontrada.";
+        public const string UserNotFound = "Usuário não encontrado.";
     }
 }

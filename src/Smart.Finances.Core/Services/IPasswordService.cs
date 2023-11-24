@@ -1,6 +1,6 @@
 ﻿namespace Smart.Finances.Core.Services
 {
-    public interface IAuthService
+    public interface IPasswordService
     {
         public string ComputeSha256Hash(string password);
     }

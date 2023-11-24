@@ -6,7 +6,7 @@ using Smart.Finances.Application.Commands.ExpenseEvent.Handlers;
 using Smart.Finances.Application.Commands.InstallmentEvent.Commands;
 using Smart.Finances.Application.Commands.InstallmentEvent.Handlers;
 using Smart.Finances.Application.Commands.UserEvent.Commands;
-using Smart.Finances.Application.Commands.UserEvent.Handlres;
+using Smart.Finances.Application.Commands.UserEvent.Handlers;
 using Smart.Finances.Application.Queries.CategoryEvent.Handlers;
 using Smart.Finances.Application.Queries.CategoryEvent.Queries;
 using Smart.Finances.Application.Queries.ExpenseEvent.Handlers;
@@ -31,6 +31,7 @@ namespace Smart.Finances.IoC
             services.AddScoped<IRequestHandler<PayInstallmentCommand, InstallmentViewModel>, PayInstallmentHandler>();
             services.AddScoped<IRequestHandler<GetExpenseQuery, List<ExpenseViewModel>>, GetExpenseHandler>();
             services.AddScoped<IRequestHandler<GetExpenseMontheyQuery, List<ExpenseViewModel>>, GetExpenseMontheyHandler>();
+            services.AddScoped<IRequestHandler<LoginCommand, LoginViewModel>, LoginHandler>();
 
             return services;
         }

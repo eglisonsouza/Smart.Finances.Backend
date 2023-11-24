@@ -11,16 +11,16 @@ namespace Smart.Finances.Controllers.V1
     {
         [HttpPost]
         [Route("register")]
-        public IActionResult Cadastrar(
+        public async Task<IActionResult> AddAsync(
             [FromServices] IRequestHandler<AddUserCommand, UserViewModel> handler,
             AddUserCommand command)
         {
-            return Ok(handler.Handle(command));
+            return Ok(await handler.Handle(command));
         }
 
         [HttpPut]
         [Route("update/profile")]
-        public async Task<IActionResult> UpdateProfile(
+        public async Task<IActionResult> UpdateProfileAsync(
             [FromServices] IRequestHandler<UpdateUserCommand, UserViewModel> handler,
             UpdateUserCommand command)
         {
@@ -29,9 +29,18 @@ namespace Smart.Finances.Controllers.V1
 
         [HttpPatch]
         [Route("update/password")]
-        public async Task<IActionResult> UpdatePassword(
+        public async Task<IActionResult> UpdatePasswordAsync(
             [FromServices] IRequestHandler<UpdatePasswordCommand, UserViewModel> handler,
             UpdatePasswordCommand command)
+        {
+            return Ok(await handler.Handle(command));
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> LoginAsync(
+            [FromServices] IRequestHandler<LoginCommand, LoginViewModel> handler,
+            LoginCommand command)
         {
             return Ok(await handler.Handle(command));
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.Core.Repositories;
 using Smart.Finances.Core.Repositories.Base;
+using Smart.Finances.Infra.Persistence.Configurations;
 using Smart.Finances.Infra.Persistence.Repositories;
 
 namespace Smart.Finances.IoC
@@ -15,6 +16,7 @@ namespace Smart.Finances.IoC
             services.AddScoped(typeof(IGetAllRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IAddAllRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

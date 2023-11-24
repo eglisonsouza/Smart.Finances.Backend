@@ -8,7 +8,8 @@ namespace Smart.Finances.IoC
     {
         public static IServiceCollection AddService(this IServiceCollection services)
         {
-            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IPasswordService, PasswordService>();
+            services.AddScoped<ITokenService, TokenService>();
             return services;
         }
     }
