@@ -20,11 +20,8 @@ namespace Smart.Finances.Application.Commands.CategoryEvent.Handlers
 
         public async Task<CategoryViewModel> Handle(EditCategoryCommand request)
         {
-            var category = await _getByIdRepository
-                .GetByIdAsync(request.Id);
-
-            if (category is null)
-                throw new Exception(MessageError.CategoryNotFound);
+            var category = await _getByIdRepository.GetByIdAsync(request.Id)
+                ?? throw new Exception(MessageError.CategoryNotFound);
 
             category.Update(request.Description);
 

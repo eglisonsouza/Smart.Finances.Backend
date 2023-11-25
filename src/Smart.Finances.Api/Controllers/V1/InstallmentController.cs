@@ -12,7 +12,7 @@ namespace Smart.Finances.Controllers.V1
     [ApiController]
     public class InstallmentController : ControllerBase
     {
-        [HttpPatch]
+        [HttpPut]
         [Route("pay")]
         public async Task<IActionResult> PayAsync([FromServices] IRequestHandler<PayInstallmentCommand, InstallmentViewModel> handler,
             PayInstallmentCommand command)

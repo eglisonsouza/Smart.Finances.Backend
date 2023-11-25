@@ -4,8 +4,8 @@ namespace Smart.Finances.Core.Repositories
 {
     public interface IExpenseRepository
     {
-        Task<IList<Expense>> GetByMonthAsync(int month, Guid userId);
+        Task<List<Expense>> GetByMonthAsync(int month, Guid userId);
 
-        Task<IList<Expense>> GetExpenseMontheyAsync(Guid userId);
+        Task<List<Expense>> GetExpenseMontheyAsync(Guid userId);
     }
 }

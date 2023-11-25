@@ -38,12 +38,10 @@ namespace Smart.Finances.Application.ViewModels
 
         private static CategoryViewModel? BuildCategoy(Category entity)
         {
-            if (entity is null)
-                return null;
-            return CategoryViewModel.FromEntity(entity);
+            return entity is null ? null : CategoryViewModel.FromEntity(entity);
         }
 
-        public static List<ExpenseViewModel> FromEntity(IEnumerable<Expense> entity)
+        public static List<ExpenseViewModel> FromEntity(List<Expense> entity)
         {
             return entity.Select(FromEntity).ToList();
         }

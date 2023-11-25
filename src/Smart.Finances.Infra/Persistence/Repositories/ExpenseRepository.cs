@@ -14,30 +14,20 @@ namespace Smart.Finances.Infra.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<IList<Expense>> GetByMonthAsync(int month, Guid userId)
+        public Task<List<Expense>> GetByMonthAsync(int month, Guid userId)
         {
-            return await _context.Expense
+            return _context.Expense
                 .Include(d => d.Category)
                 .Include(d => d.Installments!.Where(p => p.DueDate.Month.Equals(month)))
-                .Where(d => IsNotMonthlyByUser(userId, d)).ToListAsync();
+                .Where(d => d.UserId.Equals(userId) && d.IsMonthly.Equals(false) && d.IsActive.Equals(true)).ToListAsync();
         }
-
-        private static bool IsNotMonthlyByUser(Guid userId, Expense d)
+        public Task<List<Expense>> GetExpenseMontheyAsync(Guid userId)
         {
-            return d.UserId.Equals(userId) && d.IsNotMonthlyAndActive();
-        }
-
-        public async Task<IList<Expense>> GetExpenseMontheyAsync(Guid userId)
-        {
-            return await _context.Expense
+            return _context.Expense
                 .Include(d => d.Category)
                 .Include(d => d.Installments)
-                .Where(d => IsMonthlyByUser(userId, d)).ToListAsync();
-        }
-
-        private static bool IsMonthlyByUser(Guid userId, Expense d)
-        {
-            return d.UserId.Equals(userId) && d.IsMonthlyAndActive();
+                .Where(d => d.UserId.Equals(userId) && d.IsMonthly.Equals(true) && d.IsActive.Equals(true))
+                .ToListAsync();
         }
     }
 }

@@ -23,10 +23,8 @@ namespace Smart.Finances.Application.Commands.UserEvent.Handlers
 
         public async Task<UserViewModel> Handle(UpdatePasswordCommand request)
         {
-            var user = await _getByIdRepository.GetByIdAsync(request.Id);
-
-            if (user is null)
-                throw new Exception(MessageError.UserNotFound);
+            var user = await _getByIdRepository.GetByIdAsync(request.Id)
+                ?? throw new Exception(MessageError.UserNotFound);
 
             user.UpdatePassword(_authService.ComputeSha256Hash(request.Password!));
 

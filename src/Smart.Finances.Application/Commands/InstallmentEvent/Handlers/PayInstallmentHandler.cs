@@ -24,10 +24,8 @@ namespace Smart.Finances.Application.Commands.InstallmentEvent.Handlers
 
         public async Task<InstallmentViewModel> Handle(PayInstallmentCommand request)
         {
-            var entity = await _getByIdRepository.GetByIdAsync(request.InstallmentId);
-
-            if (entity is null)
-                throw new Exception(MessageError.InstallmentNotFound);
+            var entity = await _getByIdRepository.GetByIdAsync(request.InstallmentId)
+                ?? throw new Exception(MessageError.InstallmentNotFound);
 
             entity.Pay();
 

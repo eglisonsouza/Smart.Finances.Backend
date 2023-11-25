@@ -97,15 +97,5 @@ Obrigado por utilizar o Smart Finances!";
 
             return string.Empty;
         }
-
-        public bool IsMonthlyAndActive()
-        {
-            return IsMonthly.Equals(true) && IsActive.Equals(true);
-        }
-
-        public bool IsNotMonthlyAndActive()
-        {
-            return IsMonthly.Equals(false) && IsActive.Equals(true);
-        }
     }
 }

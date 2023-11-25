@@ -33,7 +33,7 @@ namespace Smart.Finances.Controllers.V1
         [HttpPut]
         public async Task<ActionResult> PutAsync(
             [FromServices] IRequestHandler<EditCategoryCommand, CategoryViewModel> handler,
-            EditCategoryCommand command
+            [FromBody] EditCategoryCommand command
             )
         {
             return Ok(await handler.Handle(command));
