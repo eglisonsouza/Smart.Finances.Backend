@@ -1,16 +1,17 @@
 ﻿using RabbitMQ.Client;
+using Smart.Finances.Core.Model.UI;
 
 namespace Smart.Finances.Infra.MessageBus.Setup
 {
     public class RabbitMqSetup
     {
-        public static ConnectionFactory CreateConnectionFactory()
+        public static ConnectionFactory CreateConnectionFactory(RabbitMqSettings rabbitMq)
         {
             return new ConnectionFactory
             {
-                HostName = "192.168.112.1",
-                Password = "guest",
-                UserName = "guest",
+                HostName = rabbitMq.Host,
+                Password = rabbitMq.Password,
+                UserName = rabbitMq.User,
             };
         }
 

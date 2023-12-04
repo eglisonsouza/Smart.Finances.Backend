@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Smart.Finances.Infra.MessageBus.Queues.Consumers;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Smart.Finances.Infra.MessageBus.Queues.Publishers;
-using Smart.Finances.Infra.MessageBus.Setup;
 
 namespace Smart.Finances.IoC
 {
@@ -9,10 +8,7 @@ namespace Smart.Finances.IoC
     {
         public static IServiceCollection AddRabbitMq(this IServiceCollection services)
         {
-            services.AddSingleton<IExpenseQueueConsumer, ExpenseQueueConsumer>();
-            services.AddSingleton<INotificationQueuePublisher, NotificationQueuePublisher>();
-
-            services.AddHostedService<RabbitMqConsumerSetup<IExpenseQueueConsumer>>();
+            services.AddScoped<INotificationQueuePublisher, NotificationQueuePublisher>();
 
             return services;
         }

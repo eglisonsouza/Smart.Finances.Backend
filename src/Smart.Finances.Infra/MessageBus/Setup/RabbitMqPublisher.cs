@@ -1,4 +1,5 @@
 ﻿using RabbitMQ.Client;
+using Smart.Finances.Core.Model.UI;
 
 namespace Smart.Finances.Infra.MessageBus.Setup
 {
@@ -6,26 +7,21 @@ namespace Smart.Finances.Infra.MessageBus.Setup
     {
         private readonly ConnectionFactory _factory;
 
-        public RabbitMqPublisher()
+        public RabbitMqPublisher(ApiSettings apiSettings)
         {
-            _factory = RabbitMqSetup.CreateConnectionFactory();
+            _factory = RabbitMqSetup.CreateConnectionFactory(apiSettings.RabbitMq!);
         }
 
         protected void Publish(string queue, byte[] message)
         {
-            using (var connection = _factory.CreateConnection())
-            {
-                using (var channel = connection.CreateModel())
-                {
-                    RabbitMqSetup.DeclareQueue(channel, queue);
-                    Send(queue, message, channel);
-                }
-            }
+            using var model = _factory.CreateConnection().CreateModel();
+            RabbitMqSetup.DeclareQueue(model, queue);
+            Send(queue, message, model);
         }
 
-        private static void Send(string queue, byte[] message, IModel channel)
+        private static void Send(string queue, byte[] message, IModel model)
         {
-            channel.BasicPublish(
+            model.BasicPublish(
                 exchange: "",
                 routingKey: queue,
                 basicProperties: null,

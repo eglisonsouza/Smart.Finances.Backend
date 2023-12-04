@@ -4,22 +4,13 @@ var AnyOriginCors = "AnyOriginCors";
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSettingsConfig(builder.Configuration);
 builder.Services.AddInfraestructureApi(builder.Configuration);
-
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureJwt();
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy
-        (
-            name: AnyOriginCors,
-            policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
-        );
-});
+builder.Services.AddCorsConfig(AnyOriginCors);
 
 var app = builder.Build();
 
