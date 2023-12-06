@@ -13,6 +13,7 @@ namespace Smart.Finances.Controllers.V1
     public class UserController : ControllerBase
     {
         [HttpPost]
+        [AllowAnonymous]
         [Route("register")]
         public async Task<IActionResult> AddAsync(
             [FromServices] IRequestHandler<AddUserCommand, UserViewModel> handler,
@@ -39,8 +40,8 @@ namespace Smart.Finances.Controllers.V1
             return Ok(await handler.Handle(command));
         }
 
-        [AllowAnonymous]
         [HttpPost]
+        [AllowAnonymous]
         [Route("login")]
         public async Task<IActionResult> LoginAsync(
             [FromServices] IRequestHandler<LoginCommand, LoginViewModel> handler,

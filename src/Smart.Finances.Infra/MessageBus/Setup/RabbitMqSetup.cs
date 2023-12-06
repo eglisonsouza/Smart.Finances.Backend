@@ -7,12 +7,19 @@ namespace Smart.Finances.Infra.MessageBus.Setup
     {
         public static ConnectionFactory CreateConnectionFactory(RabbitMqSettings rabbitMq)
         {
+#if DEBUG
             return new ConnectionFactory
             {
-                HostName = rabbitMq.Host,
-                Password = rabbitMq.Password,
-                UserName = rabbitMq.User,
+                HostName = rabbitMq.Host!,
+                UserName = rabbitMq.User!,
+                Password = rabbitMq.Password!,
             };
+#else
+            return new ConnectionFactory
+            {
+                Uri = new Uri(rabbitMq.Uri!),
+            };
+#endif
         }
 
         public static void DeclareQueue(IModel channel, string queue)
