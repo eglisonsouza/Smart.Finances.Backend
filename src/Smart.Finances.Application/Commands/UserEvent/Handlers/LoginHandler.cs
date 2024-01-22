@@ -27,7 +27,7 @@ namespace Smart.Finances.Application.Commands.UserEvent.Handlers
 
             return user is null
                 ? throw new Exception(MessageError.LoginInvalid)
-                : new LoginViewModel(user.Name, user.Email, _tokenService.GenerateToken(user.Email, RolesUser.UserApp));
+                : new LoginViewModel(user.Name, user.Email, _tokenService.GenerateToken(user.Email, RolesUser.UserApp, user.Id));
         }
     }
 }

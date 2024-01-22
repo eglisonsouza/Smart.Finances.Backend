@@ -16,21 +16,21 @@ namespace Smart.Finances.Infra.Services
             _expiresInDays = DateTime.Now.AddDays(7);
         }
 
-        public TokenDTO GenerateToken(string email, string role)
+        public TokenDTO GenerateToken(string email, string role, Guid id)
         {
             return new TokenDTO()
             {
                 ExpiresInDays = _expiresInDays,
-                Token = new JwtSecurityTokenHandler().WriteToken(SetupToken(email, role))
+                Token = new JwtSecurityTokenHandler().WriteToken(SetupToken(email, role, id))
             };
         }
 
-        private JwtSecurityToken SetupToken(string email, string role)
+        private JwtSecurityToken SetupToken(string email, string role, Guid id)
         {
             return new JwtSecurityToken(
                                issuer: "Smart.Finances",
                                audience: "Smart.Finances",
-                               claims: GetClaims(email, role),
+                               claims: GetClaims(email, role, id),
                                expires: _expiresInDays,
                                signingCredentials: GetCredentials()
             );
@@ -43,12 +43,13 @@ namespace Smart.Finances.Infra.Services
                     SecurityAlgorithms.HmacSha256Signature);
         }
 
-        private static IEnumerable<Claim> GetClaims(string email, string role)
+        private static IEnumerable<Claim> GetClaims(string email, string role, Guid id)
         {
             return new List<Claim>
             {
                 new(ClaimTypes.Email, email),
-                new(ClaimTypes.Role, role)
+                new(ClaimTypes.Role, role),
+                new(ClaimTypes.NameIdentifier, id.ToString())
             };
         }
     }
