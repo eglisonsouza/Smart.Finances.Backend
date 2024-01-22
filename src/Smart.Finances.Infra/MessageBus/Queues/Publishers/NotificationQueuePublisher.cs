@@ -12,7 +12,7 @@ namespace Smart.Finances.Infra.MessageBus.Queues.Publishers
     {
         private const string NotificationQueue = "notification";
 
-        public NotificationQueuePublisher(ApiSettings apiSettings):base(apiSettings)
+        public NotificationQueuePublisher(ApiSettings apiSettings) : base(apiSettings)
         {
         }
 
