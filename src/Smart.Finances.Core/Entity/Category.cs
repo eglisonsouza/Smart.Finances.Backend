@@ -7,6 +7,9 @@
 
         public Category(string description) : base()
         {
+            if (string.IsNullOrEmpty(description))
+                throw new ArgumentNullException(nameof(description));
+
             Description = description;
             IsActive = true;
         }
