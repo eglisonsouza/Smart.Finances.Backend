@@ -13,7 +13,7 @@ builder.Services.ConfigureJwt();
 builder.Services.AddCorsConfig(AnyOriginCors);
 
 var app = builder.Build();
-
+ 
 app.UseSwagger();
 app.UseSwaggerUI();
 
