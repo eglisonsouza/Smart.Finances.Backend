@@ -1,0 +1,43 @@
+name: Continuos Integration with Github Actions
+on:  
+  push:
+    branches: [ "main" ]
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Docker Login - Azure Container Registry
+        uses: Azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.DOCKER_CONTAINER_REGISTRY }}
+          username: ${{ secrets.DOCKER_CONTAINER_USERNAME }}
+          password: ${{ secrets.DOCKER_CONTAINER_PASSWORD }}
+
+      - name: Build Images
+        working-directory: ./
+        run: docker-compose build
+
+      - name: push to azure
+        run: |
+          docker tag ${{ secrets.IMAGE_NAME }}:latest ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ secrets.IMAGE_NAME }}:${{ github.run_id }}
+          docker push ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ secrets.IMAGE_NAME }}:${{ github.run_id }}
+
+      - name: Login in Azure
+        uses: azure/login@v1
+        with: 
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure WebApp Container - Application Deployment
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ secrets.APP_NAME_SERVER }}
+          images: ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ secrets.IMAGE_NAME }}:${{ github.run_id }}
+
+      
