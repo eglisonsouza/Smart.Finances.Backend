@@ -14,7 +14,6 @@ builder.Services.AddCorsConfig(AnyOriginCors);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.UseSwagger();
 app.UseSwaggerUI();
 
