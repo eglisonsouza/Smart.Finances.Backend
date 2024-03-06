@@ -18,3 +18,10 @@ services:
         ports:
             - 5672:5672
             - 15672:15672
+
+    redis:
+        image: redis:7.2.4-alpine
+        hostname: redis
+        command: redis-server --requirepass Redis2024!
+        ports:
+            - 6379:6379
