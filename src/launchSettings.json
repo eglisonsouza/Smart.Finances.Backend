@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "smart.finances.dataaccess": "StartDebugging"
+        "smart.finances.dataaccess": "StartDebugging",
+        "smart.finances.api": "StartDebugging"
       }
     }
   }

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  smart.finances.api:
+    image: smartfinancesapi
+    build:
+      context: .
+      dockerfile: Smart.Finances.Api/Dockerfile
